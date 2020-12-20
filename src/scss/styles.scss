@@ -1,0 +1,14 @@
+/*libs*/
+@import "../assets/libs/animate.css";
+@import "../assets/libs/bootstrap/css/bootstrap.min.css";
+@import "../assets/libs/slick/slick-theme.css";
+@import "../assets/libs/slick/slick.css";
+@import "../assets/libs/lightbox/ekko-lightbox.css";
+
+/*common*/
+@import "_fonts-page";
+@import "_mixin";
+
+/*layout*/
+@import "_common";
+@import "_blocks";
