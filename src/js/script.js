@@ -65,10 +65,12 @@ var MainScript = (function () {
         }
 
         $(".block5__slider").slick({
-            arrows: false,
-            dots: true,
-            autoplay: true,
-            autoplaySpeed: 3000
+            arrows: true,
+            dots: false,
+            autoplay: false,
+            autoplaySpeed: 3000,
+            sliderToShow: 3,
+            sliderToSroll: 1,
         });
     }
     this.Block8Slider = function () {

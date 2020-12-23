@@ -1,19 +1,207 @@
 {% set page_title = 'Sun Shine' %}
 {% extends "../elements/_base.twig" %}
 {% block content %}
-{# nhớ thêm active để show  #}
+{# nhớ thêm active để show #}
 <div class="message d-none">
     <div class="message__content text-center">
         <div class="message__title">Bạn đã đăng ký tư vấn thành công.</div>
         <button class="btn-submit" type="button">Đóng</button>
     </div>
 </div>
-{#  nhớ thêm active để show  #}
+{# nhớ thêm active để show #}
 <div class="loading">
     <div class="spinner-border" role="status">
         <span class="sr-only">Loading...</span>
     </div>
 </div>
-<div>Test</div
+<div class="menu">
+    <a href="#" class="menu__logo">
+        <img src="../../assets/images/logo.png" alt="verosa park">
+    </a>
+    <ul class="menu__nav">
+        <li class="menu__nav-item">
+            <a class="menu__nav-link active" link="trangchu" href="#trangchu">Trang chủ</a>
+        </li>
+        <li class="menu__nav-item">
+            <a class="menu__nav-link" link="tongquan" href="#tongquan">tổng quan</a>
+        </li>
+        <li class="menu__nav-item">
+            <a class="menu__nav-link" link="vitri" href="#vitri">vị trí</a>
+        </li>
+        <li class="menu__nav-item">
+            <a class="menu__nav-link" link="phaply" href="#phaply">pháp lý</a>
+        </li>
+        <li class="menu__nav-item">
+            <a class="menu__nav-link" link="tienich" href="#tienich">Tiện ích</a>
+        </li>
+        <li class="menu__nav-item">
+            <a class="menu__nav-link" link="csbh" href="#csbh">chính sách bán hàng</a>
+        </li>
+        <li class="menu__nav-item">
+            <a class="menu__nav-link" link="lienhe" href="#lienhe">liên hệ</a>
+        </li>
+    </ul>
+</div>
+</div>
+
+{# trangchu #}
+<section class="s block1 trangchu" id="trangchu">
+    <figure class="block1__bg">
+        <img src="../../assets/images/block1_bg.jpg" alt="block1_bg">
+    </figure>
+    <figure class="block1__text">
+        <img src="../../assets/images/block1_text.png" alt="block1_text">
+    </figure>
+
+    <div class="form">
+        <figure class="form__title">
+            <img src="../../assets/images/form_title.png" alt="form_title">
+        </figure>
+        <div class="form__content">
+            <div class="form-group">
+                <input type="text" placeholder="Họ và tên" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Số điện thoại" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Lời nhắn" class="form-control">
+            </div>
+        </div>
+        <div class="form__des">
+            <p>Dự án đã hoàn thiện, đang bàn giao</p>
+            <p>Pháp lý minh bạch, sổ đổ từng lô</p>
+            <p>Nhiều CSBH hấp dẫn</p>
+        </div>
+        <div class="text-center">
+            <button disabled="disabled" class="form__submit button">
+                <img src="../../assets/images/button.png" alt="form__submit">
+            </button>
+        </div>
+    </div>
+</section>
+
+{# tongquan #}
+<section class="block block2 tongquan" id="tongquan">
+    <figure class="block2__play">
+        <img src="../../assets/images/video_play.png" alt="video_play">
+    </figure>
+    <div class="block2__content">
+        <figure class="block2__title">
+            <img src="../../assets/images/block2_title.png" alt="block2_title">
+        </figure>
+        <div class="block2__des">
+            Như câu nói “Nhà là nơi trái tim ta cư ngụ…” mà nhiều người gói ghém khát khao về ngôi nhà hạnh phúc, Khang
+            Điền
+            đã mang khát vọng về một không gian sống biệt lập mang âm hưởng Châu Âu hoài cổ chuyển tải trọn vẹn qua
+            Verosa
+            Park - Quần thể Nhà liên kế và biệt thự 5 sao, một không gian sống thượng lưu dành cho những khách hàng trân
+            trọng giá trị tinh hoa.
+        </div>
+        <div class="block2__items">
+            <div class="item">
+                <figure class="img">
+                    <img src="../../assets/images/block2_icon1.png" alt="block2_icon1">
+                </figure>
+                <div class="title">Vị trí</div>
+                <div class="text">
+                    Gần vòng xoay Liên Phường, Võ Chí Công, Quận 9 (kế cận Quận 2), TP.HCM
+                </div>
+            </div>
+            <div class="item">
+                <figure class="img">
+                    <img src="../../assets/images/block2_icon2.png" alt="block2_icon1">
+                </figure>
+                <div class="title">Diện tích</div>
+                <div class="text">
+                    <span class="highlight">8,1</span> Ha
+                </div>
+            </div>
+            <div class="item">
+                <figure class="img">
+                    <img src="../../assets/images/block2_icon3.png" alt="block2_icon1">
+                </figure>
+                <div class="title">Sản phẩm</div>
+                <div class="text">
+                    <span class="highlight">296</span> căn Nhà liên kế & Biệt thự <br> <span class="highlight">16.000 m2
+                    </span> Diện tích mảng xanh
+                </div>
+            </div>
+        </div>
+        <figure class="block2__button button">
+            <img src="../../assets/images/button1.png" alt="button1">
+        </figure>
+    </div>
+</section>
+
+{# block3 #}
+<section class="block block3"></section>
+
+{# vitri #}
+<section class="block block4 vitri" id="vitri">
+    <figure class="block4__map">
+        <img src="../../assets/images/block4_map.jpg" alt="block4_map">
+    </figure>
+    <div class="block4__content">
+        <figure class="block4__title">
+            <img src="../../assets/images/block4_title.png" alt="block4_title">
+        </figure>
+        <div class="block4__des">
+            <p>Gần vòng xoay Liên Phường – Võ Chí Công, phường Phú Hữu, Quận 9 (kế cận Quận 2), trong quần thể các khu
+                dân cư hiện hữu do Khang Điền phát triển trước đó: khu biệt thự Lucasta, khu nhà liên kế Mega, Merita,
+                đồng thời cũng rất gần với Khu biệt thự 5 Sao(+) The Venica.</p>
+            <p> Chỉ 5 phút di chuyển đến khu công nghệ cao Quận 9, Đại học Fulbright; 10 - 15 phút về khu đô thị mới Thủ
+                Thiêm và trung tâm Quận 1 thông qua cao tốc TP.HCM - Long Thành – Dầu Giây, 15 - 20 phút để đến khu đô
+                thị Phú Mỹ Hưng thông qua cầu Phú Mỹ. Đồng thời, trong tương lai, chỉ mất 30 di chuyển đến sân bay quốc
+                tế Long Thành.</p>
+        </div>
+    </div>
+</section>
+
+{# block5 #}
+<section class="block block5">
+    <div class="block5__heading">
+
+        <figure class="block5__title">
+            <img src="../../assets/images/block5_title.png" alt="block4_map">
+        </figure>
+        <div class="block5__des">
+            Verosa Park dần hoàn thiện, đẹp hơn, xanh hơn mỗi ngày. Từ tháng 5.2020, Verosa Park bắt đầu bàn giao và
+            chuẩn
+            bị chào đón những cư dân đầu tiên dọn về
+        </div>
+    </div>
+
+    <div class="block5__slider">
+        <figure class="img">
+            <img src="../../assets/images/block5_slider.jpg" alt="block5_slider">
+        </figure>
+        <figure class="img">
+            <img src="../../assets/images/block5_slider.jpg" alt="block5_slider">
+        </figure>
+        <figure class="img">
+            <img src="../../assets/images/block5_slider.jpg" alt="block5_slider">
+        </figure>
+    </div>
+
+</section>
+
+{# phaply #}
+<section class="block block6 phaply" id="phaply"></section>
+
+{# tienich #}
+<section class="block block7 tienich" id="tienich"></section>
+
+{# csbh #}
+<section class="block block8 csbh" id="csbh"></section>
+
+{# block9 #}
+<section class="block block9"></section>
+
+{# lienhe #}
+<section class="block block10 lienhe" id="lienhe"></section>
 
 {% endblock %}
