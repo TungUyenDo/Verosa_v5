@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'ICIELDOMAINEDISPLAYDEMIBOLD';
+    src: url('fonts/ICIELDOMAINEDISPLAYDEMIBOLD.eot');
+    src: url('fonts/ICIELDOMAINEDISPLAYDEMIBOLD.eot') format('embedded-opentype'),
+         url('fonts/ICIELDOMAINEDISPLAYDEMIBOLD.woff2') format('woff2'),
+         url('fonts/ICIELDOMAINEDISPLAYDEMIBOLD.woff') format('woff'),
+         url('fonts/ICIELDOMAINEDISPLAYDEMIBOLD.ttf') format('truetype'),
+         url('fonts/ICIELDOMAINEDISPLAYDEMIBOLD.svg#ICIELDOMAINEDISPLAYDEMIBOLD') format('svg');
+}

@@ -15,8 +15,9 @@ var MainScript = (function () {
         // self.Block1ValidateForm();
         // self.Block7ValidateForm();
         // self.Block11ValidateForm();
-        self.Block5Slider();
         self.Block5SliderRunActiveList();
+        self.Block6Slider();
+        self.Block9Slider();
         // self.Block10Slider();
         // self.Block8Tabs();
         // self.Menu();
@@ -46,13 +47,14 @@ var MainScript = (function () {
         })
     }
 
-    this.Block10Slider = function () {
-        if ($(".block10__sliders").length === 0) {
+    this.Block9Slider = function () {
+        if ($(".block9__slider").length === 0) {
             return false
         }
 
-        $('.block10__sliders').slick({
-            slidesToShow: 1,
+        $('.block9__slider').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
             arrows: false,
             dots: true,
             autoplay: false,
@@ -63,7 +65,6 @@ var MainScript = (function () {
         if ($(".block5__slider").length === 0) {
             return false
         }
-
         $(".block5__slider").slick({
             arrows: true,
             dots: false,
@@ -84,17 +85,19 @@ var MainScript = (function () {
                 }
             ]
         });
+    }
 
+    this.Block6Slider = function () {
         if ($(".block6__slider").length <= 0) { return false }
         $(".block6__slider").slick({
-            autoplay: true,
+            autoplay: false,
             autoplaySpeed: 2000,
             slidesToShow: 1,
             slidesToScroll: 1,
             dots: false,
             arrows: true,
-            prevArrow: "<button type='button' class='slick-prev'><img src='../../assets/images/slider_arrow.png'></button>",
-            nextArrow: "<button type='button' class='slick-next'><img src='../../assets/images/slider_arrow.png'></button>"
+            prevArrow: "<button type='button' class='slick-prev'><img src='../../assets/images/arrow_left.png'></button>",
+            nextArrow: "<button type='button' class='slick-next'><img src='../../assets/images/arrow_right.png'></button>"
         });
 
         $(".block6__slider").on('beforeChange', function (event, slick, currentSlide, nextSlide) {
@@ -108,20 +111,6 @@ var MainScript = (function () {
             $(this).addClass("active");
             var numberSlider = $(this).attr("data-index");
             $(".block6__slider").slick('slickGoTo', parseInt(numberSlider));
-        });
-    }
-    this.Block6Slider = function () {
-        if ($(".block6__slider").length === 0) {
-            return false
-        }
-
-        $(".block6__slider").slick({
-            arrows: false,
-            dots: true,
-            autoplay: false,
-            autoplaySpeed: 3000,
-            slidesToShow: 2,
-            infinite: false
         });
     }
 
