@@ -13,6 +13,7 @@ $color1:#e3a371;
     left: 0;
     width: 100%;
     height: 142px;
+    z-index: 1;
 
     &__logo {}
 
@@ -49,13 +50,6 @@ $color1:#e3a371;
 
 .block {
     position: relative;
-    // min-height: 100vh;
-    // &:nth-child(odd) {
-    //     background-color: grey;
-    // }
-    // &:nth-child(even) {
-    //     background-color: green;
-    // }
 }
 
 .form {
@@ -305,7 +299,9 @@ $color1:#e3a371;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: top center;
-    height: 825px;
+    // height: 825px;
+    padding-top: 60px;
+    margin-bottom: 60px;
 
     &__heading {
         max-width: 525px;
@@ -316,4 +312,41 @@ $color1:#e3a371;
     &__title {}
 
     &__des {}
+
+    .slick-next {
+        right: 0;
+    }
+
+    .slick-prev {
+        left: 0;
+    }
+
+    .slick-slide {
+        opacity: 0.5;
+        padding: 0 12px;
+    }
+
+    .slick-center {
+        opacity: 1;
+    }
+}
+
+.block6 {
+    padding-left: 115px;
+    padding: 100px;
+
+    @include flexbox;
+
+    &__left {
+        max-width: 470px;
+        margin-right: 60px;
+    }
+
+    &__right {
+        @include flex(1)
+    }
+
+    &__bg {
+        height: 310px;
+    }
 }

@@ -11,18 +11,18 @@ var MainScript = (function () {
     var REX_URL = new RegExp(/^(?:(?:https?|ftp):\/\/)(?:\S+(?::\S*)?@)?(?:(?!10(?:\.\d{1,3}){3})(?!127(?:\.​\d{1,3}){3})(?!169\.254(?:\.\d{1,3}){2})(?!192\.168(?:\.\d{1,3}){2})(?!172\.(?:1[​6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1​,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00​a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u​00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/[^\s]*)?$/i);
 
     var _init = function () {
-        self.PopupValidateForm();
-        self.Block1ValidateForm();
-        self.Block7ValidateForm();
-        self.Block11ValidateForm();
+        // self.PopupValidateForm();
+        // self.Block1ValidateForm();
+        // self.Block7ValidateForm();
+        // self.Block11ValidateForm();
         self.Block5Slider();
-        self.Block10Slider();
-        self.Block8Slider();
-        self.Block8Tabs();
-        self.Menu();
-        self.OpenMenu();
-        self.CloseMenu();
-        self.lightbox();
+        self.Block5SliderRunActiveList();
+        // self.Block10Slider();
+        // self.Block8Tabs();
+        // self.Menu();
+        // self.OpenMenu();
+        // self.CloseMenu();
+        // self.lightbox();
     }
     var _resize = function () { }
 
@@ -59,7 +59,7 @@ var MainScript = (function () {
         });
     }
 
-    this.Block5Slider = function () {
+    this.Block5SliderRunActiveList = function () {
         if ($(".block5__slider").length === 0) {
             return false
         }
@@ -71,14 +71,51 @@ var MainScript = (function () {
             autoplaySpeed: 3000,
             sliderToShow: 3,
             sliderToSroll: 1,
+            centerMode: true,
+            centerPadding: '16vw',
+            prevArrow: "<button type='button' class='slick-prev'><img src='../../assets/images/arrow_left.png'></button>",
+            nextArrow: "<button type='button' class='slick-next'><img src='../../assets/images/arrow_right.png'></button>",
+            responsive: [
+                {
+                    breakpoint: 992,
+                    settings: {
+                        centerPadding: '50px',
+                    }
+                }
+            ]
+        });
+
+        if ($(".block6__slider").length <= 0) { return false }
+        $(".block6__slider").slick({
+            autoplay: true,
+            autoplaySpeed: 2000,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: false,
+            arrows: true,
+            prevArrow: "<button type='button' class='slick-prev'><img src='../../assets/images/slider_arrow.png'></button>",
+            nextArrow: "<button type='button' class='slick-next'><img src='../../assets/images/slider_arrow.png'></button>"
+        });
+
+        $(".block6__slider").on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+            $(".block6__list li").removeClass("active");
+            $(".block6__list li[data-index='" + nextSlide + "']").addClass("active");
+            console.log(1)
+        });
+
+        $(".block6__list li").on('click', function () {
+            $(".block6__list li").removeClass("active");
+            $(this).addClass("active");
+            var numberSlider = $(this).attr("data-index");
+            $(".block6__slider").slick('slickGoTo', parseInt(numberSlider));
         });
     }
-    this.Block8Slider = function () {
-        if ($(".block8__slider").length === 0) {
+    this.Block6Slider = function () {
+        if ($(".block6__slider").length === 0) {
             return false
         }
 
-        $(".block8__slider").slick({
+        $(".block6__slider").slick({
             arrows: false,
             dots: true,
             autoplay: false,
