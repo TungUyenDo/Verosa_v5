@@ -9,7 +9,7 @@ var MainScript = (function () {
     var REX_PHONE = new RegExp('^(0|84)[0-9]*$');
     var REX_EMAIL = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
     var REX_URL = new RegExp(/^(?:(?:https?|ftp):\/\/)(?:\S+(?::\S*)?@)?(?:(?!10(?:\.\d{1,3}){3})(?!127(?:\.​\d{1,3}){3})(?!169\.254(?:\.\d{1,3}){2})(?!192\.168(?:\.\d{1,3}){2})(?!172\.(?:1[​6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1​,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00​a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u​00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/[^\s]*)?$/i);
-
+    var autoplay = true;
     var _init = function () {
         // self.PopupValidateForm();
         self.Block1ValidateForm();
@@ -26,20 +26,21 @@ var MainScript = (function () {
     this.lightbox = function () {
         $('.fancybox').fancybox();
     }
+
     this.Block3Swiper = function () {
 
         const swiper = new Swiper('.swiper-container', {
             slidesPerView: 3,
             loop: true,
-            autoplay: true,
+            autoplay: autoplay,
             centeredSlides: true,
             navigation: {
                 nextEl: '.swiper-next',
                 prevEl: '.swiper-prev',
-            },
+            }
         });
 
-        swiper.on('slideChange', function (swiper) {
+        swiper.on('slideChange', function () {
             let nextSlide = $(this)[0].realIndex;
             $(".block3__list li").removeClass("active");
             $(".block3__list li[data-index='" + nextSlide + "']").addClass("active");
@@ -50,7 +51,7 @@ var MainScript = (function () {
             $(".block3__list li").removeClass("active");
             $(this).addClass("active");
             var numberSlider = $(this).attr("data-index");
-            swiper.swipeTo(parseInt(numberSlider))
+            swiper.slideTo(numberSlider, false, false);
         });
 
     }
@@ -65,7 +66,7 @@ var MainScript = (function () {
             slidesToScroll: 1,
             arrows: false,
             dots: true,
-            autoplay: false,
+            autoplay: autoplay,
             responsive: [
                 {
                     breakpoint: 768,
@@ -95,20 +96,19 @@ var MainScript = (function () {
     this.Block6SliderRunActiveList = function () {
         if ($(".block6__slider").length <= 0) { return false }
         $(".block6__slider").slick({
-            autoplay: false,
+            autoplay: autoplay,
             autoplaySpeed: 2000,
             slidesToShow: 1,
             slidesToScroll: 1,
             dots: false,
             arrows: true,
-            prevArrow: "<button type='button' class='slick-prev'><img src='../../assets/images/arrow_left.png'></button>",
-            nextArrow: "<button type='button' class='slick-next'><img src='../../assets/images/arrow_right.png'></button>"
+            prevArrow: $('.prev'),
+            nextArrow: $('.next')
         });
 
         $(".block6__slider").on('beforeChange', function (event, slick, currentSlide, nextSlide) {
             $(".block6__list li").removeClass("active");
             $(".block6__list li[data-index='" + nextSlide + "']").addClass("active");
-            console.log(1)
         });
 
         $(".block6__list li").on('click', function () {
@@ -126,14 +126,14 @@ var MainScript = (function () {
         $(".block5__slider").slick({
             arrows: true,
             dots: false,
-            autoplay: false,
+            autoplay: autoplay,
             autoplaySpeed: 3000,
             sliderToShow: 3,
             sliderToSroll: 1,
             centerMode: true,
             centerPadding: '16vw',
-            prevArrow: "<button type='button' class='slick-prev'><img src='../../assets/images/arrow_left.png'></button>",
-            nextArrow: "<button type='button' class='slick-next'><img src='../../assets/images/arrow_right.png'></button>",
+            prevArrow: $('.prev'),
+            nextArrow: $('.next'),
             responsive: [
                 {
                     breakpoint: 992,
@@ -166,7 +166,6 @@ var MainScript = (function () {
     }
 
     this.Block1ValidateForm = function () {
-        console.log(33);
         var form = [{
             name: '.block1Name',
             validators: ['required']
@@ -206,7 +205,6 @@ var MainScript = (function () {
         validateForm($submit, form);
     }
 
-
     this.Menu = function () {
         $('.menu__nav-item a').click(function (e) {
             e.preventDefault();
@@ -241,6 +239,7 @@ var MainScript = (function () {
             }
         })
     }
+
     this.CloseMenu = function () {
         $('.menu__toggle_close').click(function () {
             $('.menu__text_toggle').removeClass('active')

@@ -1,12 +1,16 @@
 $color1: #e3a371;
+
 @mixin mb_fs14 {
     font-size: 14px;
 }
+
 .hambuger {
     cursor: pointer;
+
     @media (min-width: 768px) {
         display: none;
     }
+
     .bar {
         width: 30px;
         height: 2px;
@@ -82,6 +86,7 @@ $color1: #e3a371;
         padding: 0;
         margin: 0;
         margin-left: 2.083vw;
+
         @media (max-width: 767px) {
             @include flex-direction(column);
             @include transition(all 0.3s ease);
@@ -143,6 +148,59 @@ $color1: #e3a371;
     }
 }
 
+
+.message {
+    @include transform(translate(-50%, -50%));
+    @include transition(all 0.3s ease);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 9999;
+    width: 31.25vw;
+    padding: 1.04167vw;
+    background: rgba(255, 255, 255, 0.8);
+    opacity: 0;
+    z-index: -1;
+    visibility: hidden;
+
+    @media (max-width: 767px) {
+        max-width: 400px;
+        width: 60vw;
+        padding: 2vw;
+    }
+
+    &.active {
+        opacity: 1;
+        z-index: 88;
+        visibility: visible;
+    }
+
+    &__content {}
+
+    &__title {
+        font-size: 1.65vw;
+        color: #000;
+        text-align: center;
+        padding-top: 7px;
+        padding-bottom: 5px;
+
+        @media (max-width: 767px) {
+            font-size: 4vw;
+        }
+    }
+
+    .btn-submit {
+        margin-top: 1vw;
+        border: none;
+        background: #e3a371;
+        padding: 5px 45px;
+        padding-bottom: 2px;
+        font-size: 25px;
+        color: #fff;
+        border-radius: 25px;
+    }
+}
+
 .button {
     &:hover {
         opacity: 0.8;
@@ -191,6 +249,7 @@ $color1: #e3a371;
         padding-left: 3.385vw;
         color: #fff;
         margin-bottom: 1.042vw;
+
         @media (max-width: 767px) {
             margin-bottom: 20px;
         }
@@ -202,6 +261,7 @@ $color1: #e3a371;
             padding-left: 0.938vw;
             display: block;
             margin-bottom: 0.156vw;
+
             @media (max-width: 767px) {
                 @include mb_fs14;
                 padding-left: 15px;
@@ -216,6 +276,7 @@ $color1: #e3a371;
                 background-color: #fff;
                 left: 0;
                 top: 0.573vw;
+
                 @media (max-width: 767px) {
                     width: 5px;
                     height: 5px;
@@ -249,6 +310,7 @@ $color1: #e3a371;
         background-color: #fff;
         padding: 0.521vw 1.042vw;
         font-size: 1.146vw;
+
         @media (max-width: 767px) {
             @include mb_fs14;
             height: 45px;
@@ -258,6 +320,7 @@ $color1: #e3a371;
 
         @mixin placeholder {
             color: #769ba7;
+
             @media (max-width: 767px) {
                 @include mb_fs14;
             }
@@ -298,11 +361,12 @@ $color1: #e3a371;
 .block1 {
     // height: 1080px;
     position: relative;
+
     @media (max-width: 767px) {
         overflow: hidden;
     }
-    &__bg {
-    }
+
+    &__bg {}
 
     &__text {
         position: absolute;
@@ -344,6 +408,7 @@ $color1: #e3a371;
         background-image: none;
         min-height: auto;
     }
+
     .highlight {
         color: #f3c39f;
     }
@@ -413,10 +478,12 @@ $color1: #e3a371;
         .item {
             text-align: center;
             width: 100%;
+
             @media (max-width: 767px) {
                 width: 30% !important;
                 margin-bottom: 20px;
             }
+
             @media (max-width: 480px) {
                 width: 100% !important;
                 max-width: 100% !important;
@@ -460,9 +527,7 @@ $color1: #e3a371;
                 }
             }
 
-            .title {
-                text-transform: uppercase;
-            }
+            .title {}
 
             .text {
                 line-height: normal;
@@ -474,6 +539,7 @@ $color1: #e3a371;
         width: 17.708vw;
         margin-left: 7.813vw;
         margin-top: 2.344vw;
+
         @media (max-width: 767px) {
             margin-left: auto;
             margin-right: auto;
@@ -512,6 +578,7 @@ $color1: #e3a371;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: top center;
+
     // height: 825px;
     @media (max-width: 767px) {
         padding: 50px 0;
@@ -530,11 +597,13 @@ $color1: #e3a371;
     &__slider {
         width: 51.563vw;
         @include transform(translateY(-2.604vw));
+
         @media (max-width: 767px) {
             @include transform(none);
             width: 80%;
             margin-bottom: 30px;
         }
+
         @media (max-width: 480px) {
             width: 100%;
         }
@@ -542,7 +611,8 @@ $color1: #e3a371;
 
     .swiper-slide {
         @include transform(scale(0.7) translateY(1.823vw));
-        @include transition(all 0.3s ease);
+        @include transition(all 0.5s ease);
+
         &.swiper-slide-active {
             @include transform(scale(1));
         }
@@ -562,6 +632,7 @@ $color1: #e3a371;
 
     &__title {
         margin-bottom: 1.563vw;
+
         @media (max-width: 767px) {
             max-width: 330px;
             margin-right: auto;
@@ -590,16 +661,20 @@ $color1: #e3a371;
         line-height: 1.563vw;
         line-height: normal;
         font-family: $ICIELDOMAINEDISPLAYMEDIUM;
+        cursor: pointer;
+
         @media (max-width: 767px) {
             @include mb_fs14;
             line-height: 17px;
         }
+
         &.active {
             color: #f1c29f;
         }
 
         &:not(:last-child) {
             margin-bottom: 1.146vw;
+
             @media (max-width: 767px) {
                 margin-bottom: 10px;
             }
@@ -619,6 +694,8 @@ $color1: #e3a371;
 
     &__map {
         width: 53.333%;
+        @include flexbox;
+        @include align-items(flex-end);
 
         @media (max-width: 767px) {
             width: 100%;
@@ -678,15 +755,18 @@ $color1: #e3a371;
     background-repeat: no-repeat;
     background-position: top center;
     padding-top: 3.125vw;
+
     @media (max-width: 767px) {
         padding-top: 50px;
         padding-bottom: 30px;
         margin-bottom: -1px;
     }
+
     &__heading {
         width: 27.344vw;
         margin-left: auto;
         margin-right: auto;
+
         @media (max-width: 767px) {
             width: 100%;
             margin: 0 auto;
@@ -696,6 +776,7 @@ $color1: #e3a371;
 
     &__title {
         margin-bottom: 0.521vw;
+
         @media (max-width: 767px) {
             max-width: 435px;
             margin-bottom: 10px;
@@ -709,6 +790,7 @@ $color1: #e3a371;
         line-height: 1.302vw;
         font-weight: 500;
         margin-bottom: 1.302vw;
+
         @media (max-width: 767px) {
             @include mb_fs14;
             line-height: normal;
@@ -716,8 +798,13 @@ $color1: #e3a371;
         }
     }
 
+    &__slider-wrap {
+        position: relative;
+    }
+
     .slick-next {
         right: 4.688vw;
+
         @media (max-width: 767px) {
             right: 15px;
         }
@@ -725,6 +812,7 @@ $color1: #e3a371;
 
     .slick-prev {
         left: 4.688vw;
+
         @media (max-width: 767px) {
             left: 15px;
         }
@@ -741,6 +829,7 @@ $color1: #e3a371;
 
     .slick-arrow {
         width: 2.865vw;
+        height: auto;
     }
 }
 
@@ -748,6 +837,7 @@ $color1: #e3a371;
     $left: 24.7395%;
     $right: 61.4583%;
     height: 53.646vw;
+
     @media (max-width: 767px) {
         height: auto;
     }
@@ -755,6 +845,7 @@ $color1: #e3a371;
     &__bg {
         position: absolute;
         height: 100%;
+
         img {
             height: 100%;
         }
@@ -790,8 +881,8 @@ $color1: #e3a371;
     &__slider {
         padding-bottom: 5.99vw;
         position: relative;
-        @media (max-width: 767px) {
-        }
+
+        @media (max-width: 767px) {}
 
         img {
             width: 100%;
@@ -803,6 +894,7 @@ $color1: #e3a371;
         font-size: 1.094vw;
         line-height: 1.302vw;
         margin-bottom: 1.302vw;
+
         @media (max-width: 767px) {
             @include mb_fs14;
             line-height: 1.2;
@@ -812,6 +904,7 @@ $color1: #e3a371;
 
     &__title {
         margin-bottom: 0.521vw;
+
         @media (max-width: 767px) {
             margin-bottom: 20px;
         }
@@ -823,6 +916,7 @@ $color1: #e3a371;
         margin: 0;
         margin-left: 0.365vw;
         font-size: 1.198vw;
+
         @media (max-width: 767px) {
             @include mb_fs14;
             margin-bottom: 30px;
@@ -836,6 +930,7 @@ $color1: #e3a371;
         border-radius: 2.604vw;
         padding-left: 2.083vw;
         margin-bottom: 0.052vw;
+
         @media (max-width: 767px) {
             padding-left: 24px;
             margin-bottom: 1px;
@@ -850,6 +945,7 @@ $color1: #e3a371;
             top: 0.781vw;
             width: 0.625vw;
             height: 0.625vw;
+
             @media (max-width: 767px) {
                 @include mb_fs14;
                 width: 5px;
@@ -891,11 +987,14 @@ $color1: #e3a371;
 
 .block7 {
     padding-bottom: 5.99vw;
+
     @media (max-width: 767px) {
         padding: 0;
     }
+
     &__bg {
         position: absolute;
+
         @media (max-width: 767px) {
             display: none;
         }
@@ -905,6 +1004,7 @@ $color1: #e3a371;
         @include flexbox;
         position: relative;
         z-index: 1;
+
         @media (max-width: 767px) {
             @include flex-direction(column);
             background: linear-gradient(180deg, #7198a4 0%, #a2c5ed 100%);
@@ -917,6 +1017,7 @@ $color1: #e3a371;
         @include flex-direction(column);
 
         width: 33.0729%;
+
         @media (max-width: 767px) {
             width: 100%;
             @include flexbox;
@@ -929,6 +1030,7 @@ $color1: #e3a371;
 
         &-text {
             width: 23.958vw;
+
             @media (max-width: 767px) {
                 width: 100%;
                 max-width: 45%;
@@ -940,13 +1042,13 @@ $color1: #e3a371;
             margin-bottom: 4.167vw;
         }
 
-        &-text-2 {
-        }
+        &-text-2 {}
     }
 
     &__right {
         width: 65.625%;
         margin-left: auto;
+
         @media (max-width: 767px) {
             width: 100%;
             margin-left: 0;
@@ -955,6 +1057,7 @@ $color1: #e3a371;
 
     &__title {
         width: 50.781vw;
+
         @media (max-width: 767px) {
             width: 100%;
             max-width: 80%;
@@ -964,6 +1067,7 @@ $color1: #e3a371;
 
     &__title-top {
         width: 32.292vw;
+
         @media (max-width: 767px) {
             width: 100%;
         }
@@ -971,6 +1075,7 @@ $color1: #e3a371;
 
     &__title-sub {
         margin-bottom: 0.781vw;
+
         @media (max-width: 767px) {
             margin-bottom: 15px;
         }
@@ -982,6 +1087,7 @@ $color1: #e3a371;
         font-size: 1.302vw;
         line-height: 1.458vw;
         margin-bottom: 1.302vw;
+
         @media (max-width: 767px) {
             @include mb_fs14;
             line-height: 17px;
@@ -990,6 +1096,7 @@ $color1: #e3a371;
 
     &__img {
         margin-left: 1.042vw;
+
         @media (max-width: 767px) {
             margin: 0;
         }
@@ -999,14 +1106,17 @@ $color1: #e3a371;
 .block8 {
     background-color: #f5f4f4;
     padding-bottom: 3.125vw;
+
     @media (max-width: 767px) {
         padding: 50px 20px;
     }
+
     &__title {
         margin: 0 auto;
         width: 25vw;
         margin-bottom: 1.042vw;
         @include transform(translateY(-40px));
+
         @media (max-width: 767px) {
             width: 100%;
             max-width: 435px;
@@ -1021,6 +1131,7 @@ $color1: #e3a371;
         margin-left: auto;
         margin-right: auto;
         width: 70.313vw;
+
         @media (max-width: 767px) {
             width: 100%;
         }
@@ -1038,6 +1149,7 @@ $color1: #e3a371;
             margin-left: auto;
             margin-right: auto;
         }
+
         @media (max-width: 600px) {
             width: 100%;
             margin-bottom: 10px;
@@ -1048,6 +1160,7 @@ $color1: #e3a371;
             margin-left: auto;
             margin-right: auto;
             position: relative;
+
             @media (max-width: 767px) {
                 width: 100%;
                 max-width: 120px;
@@ -1057,6 +1170,7 @@ $color1: #e3a371;
                 width: 100%;
             }
         }
+
         a {
             position: absolute;
             width: 100%;
@@ -1096,6 +1210,7 @@ $color1: #e3a371;
         margin-right: auto;
         margin-bottom: 2.604vw;
         width: 14.323vw;
+
         @media (max-width: 767px) {
             width: 100%;
             max-width: 280px;
@@ -1103,8 +1218,7 @@ $color1: #e3a371;
         }
     }
 
-    &__slider {
-    }
+    &__slider {}
 
     &__item {
         .img {
@@ -1112,12 +1226,15 @@ $color1: #e3a371;
             margin-bottom: 2.083vw;
             max-height: 15.625vw;
             cursor: pointer;
+
             @media (max-width: 767px) {
                 margin-bottom: 15px;
             }
+
             @media (max-width: 600px) {
                 max-height: 100%;
             }
+
             img {
                 @include transition(all 0.3s ease);
             }
@@ -1132,10 +1249,12 @@ $color1: #e3a371;
         .text {
             font-size: 1.51vw;
             line-height: 1.927vw;
+
             @media (max-width: 767px) {
                 @include mb_fs14;
                 line-height: 1.2;
             }
+
             &:hover {
                 text-decoration: underline;
                 cursor: pointer;
@@ -1155,25 +1274,30 @@ $color1: #e3a371;
 
     .slick-dots {
         bottom: -2.344vw;
+
         li {
             width: auto;
             height: auto;
         }
+
         @media (max-width: 767px) {
             position: relative;
             bottom: 0;
             margin-top: 30px;
         }
+
         button {
             padding: 0;
             width: 12px;
             height: 12px;
             border-radius: 50%;
             background-color: #6a747f;
+
             &::before {
                 display: none;
             }
         }
+
         .slick-active {
             button {
                 background-color: #d4b896;
@@ -1228,13 +1352,16 @@ $color1: #e3a371;
     &__media {
         margin: 0;
         padding: 0;
+
         @media (max-width: 767px) {
             margin-top: 10px;
         }
+
         .media {
             @include flexbox;
             @include align-items(center);
             margin-bottom: 0.781vw;
+
             @media (max-width: 767px) {
                 margin-top: 7px;
             }
@@ -1243,6 +1370,7 @@ $color1: #e3a371;
         .img {
             max-width: 1.823vw;
             margin-right: 0.625vw;
+
             @media (max-width: 767px) {
                 max-width: 20px;
                 margin-right: 10px;
@@ -1253,6 +1381,7 @@ $color1: #e3a371;
             color: #fff;
             font-family: $ICIELDOMAINEDISPLAYBOLD;
             font-size: 1.25vw;
+
             @media (max-width: 767px) {
                 @include mb_fs14;
                 line-height: 1.2;
@@ -1263,6 +1392,7 @@ $color1: #e3a371;
     .logo_khangdien,
     .logo_white {
         width: 22.396vw;
+
         @media (max-width: 767px) {
             width: 100%;
             max-width: 35%;
@@ -1274,6 +1404,7 @@ $color1: #e3a371;
     .logo_white {
         margin-left: 4.167vw;
     }
+
     .logo_khangdien {
         @media (max-width: 767px) {
             max-width: 45%;
@@ -1325,44 +1456,113 @@ $color1: #e3a371;
     }
 }
 
-.news {
-    .modal-dialog {
-        max-width: 1140px;
-        margin-top: 6vh;
-        @media (max-width: 1140px) {
-            max-width: 90%;
-        }
-    }
+.modal {
     .modal-content {
         background-color: #0a3344;
-        border: 1px solid #0a3344;
-        border-radius: 30px;
+        border: 0.052vw solid #0a3344;
+        border-radius: 1.563vw;
         color: #fff;
-        padding-bottom: 60px;
+        padding: 2.604vw;
+
+        @media (max-width: 1140px) {
+            border: 1px solid #0a3344;
+            border-radius: 20px;
+            padding: 15px 10px;
+        }
     }
-    .modal-body {
-        max-height: 80vh;
-        padding: 55px 50px;
-        padding-bottom: 0;
-    }
+
     .close {
-        max-width: 75px;
+        width: 3.906vw;
         opacity: 1 !important;
         float: none;
         position: absolute;
-        right: -35px;
-        top: -30px;
+        right: -1.823vw;
+        top: -1.563vw;
+        cursor: pointer;
+
+        @media (max-width: 1140px) {
+            width: 100%;
+            max-width: 30px;
+            right: -10px;
+            top: -10px;
+        }
     }
-    &__title {
-        font-family: $UTMTRAJANPROBOLD;
-        font-size: 32px;
-        line-height: 1.2;
-        color: #e2c3ad;
-        margin-bottom: 25px;
+}
+
+.news {
+    .modal-dialog {
+        max-width: 59.375vw;
+        margin-top: 6vh;
+
+        @media (max-width: 1140px) {
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
-    &__content {
+
+
+
+    .modal-body {
+        padding-bottom: 0;
+        padding-top: 0;
         max-height: 65vh;
         overflow-y: auto;
-        font-size: 18px;
+    }
+
+    &__title {
+        font-family: $UTMTRAJANPROBOLD;
+        font-size: 1.667vw;
+        line-height: 1.2;
+        color: #e2c3ad;
+        margin-bottom: 1.302vw;
+
+        @media (max-width: 1140px) {
+            font-size: 20px;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+    }
+
+    &__content {
+        font-size: 0.938vw;
+
+        @media (max-width: 1140px) {
+            @include mb_fs14;
+        }
+    }
+}
+
+.popup {
+    .modal-dialog {
+        max-width: 32.552vw;
+        margin-top: 6vh;
+
+        @media (max-width: 767px) {
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 90%;
+        }
+    }
+
+    .modal-body {
+        padding: 0;
+    }
+
+    .form {
+        width: auto;
+        position: relative;
+        z-index: 1;
+
+
+    }
+
+    .form__title {
+        @media (max-width: 767px) {
+            max-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 }

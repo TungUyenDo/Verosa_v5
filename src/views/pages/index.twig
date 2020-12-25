@@ -2,7 +2,7 @@
 {% extends "../elements/_base.twig" %}
 {% block content %}
 {# nhớ thêm active để show #}
-<div class="message d-none">
+<div class="message">
     <div class="message__content text-center">
         <div class="message__title">Bạn đã đăng ký tư vấn thành công.</div>
         <button class="btn-submit" type="button">Đóng</button>
@@ -16,7 +16,7 @@
 </div>
 <div class="menu">
     <a href="#" class="menu__logo">
-        <img src="../../assets/images/logo.png" alt="verosa park">
+        <img src="./assets/images/logo.png" alt="verosa park">
     </a>
     <ul class="menu__nav">
         <li class="menu__nav-item">
@@ -51,50 +51,30 @@
 {# trangchu #}
 <section class="block1 trangchu" id="trangchu">
     <figure class="block1__bg pc">
-        <img src="../../assets/images/block1_bg.jpg" alt="block1_bg">
+        <img src="./assets/images/block1_bg.jpg" alt="block1_bg">
     </figure>
     <figure class="block1__mb_img mb">
-        <img src="../../assets/images/block1_mb_bg.jpg" alt="block1_mb_bg">
+        <img src="./assets/images/block1_mb_bg.jpg" alt="block1_mb_bg">
     </figure>
     <figure class="block1__text wow fadeInLeft" data-wow-delay="0.1s">
-        <img src="../../assets/images/block1_text.png" alt="block1_text">
+        <img src="./assets/images/block1_text.png" alt="block1_text">
     </figure>
     <div class="form">
         <figure class="form__title wow fadeIn">
-            <img src="../../assets/images/form_title.png" alt="form_title">
+            <img src="./assets/images/form_title.png" alt="form_title">
         </figure>
         <div class="form__content">
             <div class="form-group wow fadeInUp" data-wow-delay="0.2s">
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Họ và tên"
-                    class="form-control block1Name"
-                >
+                <input type="text" name="name" placeholder="Họ và tên" class="form-control block1Name">
             </div>
             <div class="form-group wow fadeInUp" data-wow-delay="0.4s">
-                <input
-                    type="text"
-                    name="phone"
-                    placeholder="Số điện thoại"
-                    class="form-control block1Phone"
-                >
+                <input type="text" name="phone" placeholder="Số điện thoại" class="form-control block1Phone">
             </div>
             <div class="form-group wow fadeInUp" data-wow-delay="0.6s">
-                <input
-                    type="text"
-                    name="email"
-                    placeholder="Email"
-                    class="form-control block1Email"
-                >
+                <input type="text" name="email" placeholder="Email" class="form-control block1Email">
             </div>
             <div class="form-group wow fadeInUp" data-wow-delay="0.8s">
-                <input
-                    type="text"
-                    name="note"
-                    placeholder="Lời nhắn"
-                    class="form-control block1Note"
-                >
+                <input type="text" name="note" placeholder="Lời nhắn" class="form-control block1Note">
             </div>
         </div>
         <div class="form__des wow fadeInUp" data-wow-delay="1s">
@@ -104,25 +84,20 @@
         </div>
         <div class="text-center wow fadeInUp" data-wow-delay="1.1s">
             <button class="form__submit button" type="submit" disabled>
-                <img src="../../assets/images/button.png" alt="form__submit">
+                <img src="./assets/images/button.png" alt="form__submit">
             </button>
         </div>
     </div>
 </section>
 {# tongquan #}
 <section class="block block2 tongquan" id="tongquan">
-    <a
-        data-fancybox
-        class="block2__play wow fadeIn"
-        data-width="640"
-        data-height="360"
-        href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"
-    >
-        <img src="../../assets/images/video_play.png" alt="video_play">
+    <a data-fancybox class="block2__play wow fadeIn" data-width="640" data-height="360"
+        href="https://www.youtube.com/watch?v=_sI_Ps7JSEk">
+        <img src="./assets/images/video_play.png" alt="video_play">
     </a>
     <div class="block2__content">
         <figure class="block2__title wow fadeInDown">
-            <img src="../../assets/images/block2_title.png" alt="block2_title">
+            <img src="./assets/images/block2_title.png" alt="block2_title">
         </figure>
         s
         <div class="block2__des wow fadeInDown" data-wow-delay="0.2s">
@@ -136,7 +111,7 @@
         <div class="block2__items wow fadeInDown" data-wow-delay="0.3s">
             <div class="item">
                 <figure class="img">
-                    <img src="../../assets/images/block2_icon1.png" alt="block2_icon1">
+                    <img src="./assets/images/block2_icon1.png" alt="block2_icon1">
                 </figure>
                 <div class="title">Vị trí</div>
                 <div class="text">
@@ -145,7 +120,7 @@
             </div>
             <div class="item">
                 <figure class="img">
-                    <img src="../../assets/images/block2_icon2.png" alt="block2_icon1">
+                    <img src="./assets/images/block2_icon2.png" alt="block2_icon1">
                 </figure>
                 <div class="title">Diện tích</div>
                 <div class="text">
@@ -155,7 +130,7 @@
             </div>
             <div class="item">
                 <figure class="img">
-                    <img src="../../assets/images/block2_icon3.png" alt="block2_icon1">
+                    <img src="./assets/images/block2_icon3.png" alt="block2_icon1">
                 </figure>
                 <div class="title">Sản phẩm</div>
                 <div class="text">
@@ -169,42 +144,43 @@
                 </div>
             </div>
         </div>
-        <figure class="block2__button button wow fadeInDown" data-wow-delay="0.4s">
-            <img src="../../assets/images/button1.png" alt="button1">
+        <figure class="block2__button button wow fadeInDown" data-toggle="modal" data-target="#popup"
+            data-wow-delay="0.4s">
+            <img src="./assets/images/button1.png" alt="button1">
         </figure>
     </div>
     <figure class="block2__title mb">
-        <img src="../../assets/images/block2_mb_img.png" alt="block2_mb_img">
+        <img src="./assets/images/block2_mb_img.png" alt="block2_mb_img">
     </figure>
 </section>
 {# block3 #}
 <section class="block block3">
     <div class="block3__wrapper">
         <figure class="block3__title mb mb-4 wow fadeInDown" data-wow-delay="0.2s">
-            <img src="../../assets/images/block3_title.png" alt="block3_title">
+            <img src="./assets/images/block3_title.png" alt="block3_title">
         </figure>
         <div class="block3__slider swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide" data-swiper="0">
                     <figure class="img">
-                        <img src="../../assets/images/block3_mb_1.jpg" alt="block3_mb_1">
+                        <img src="./assets/images/block3_mb_1.jpg" alt="block3_mb_1">
                     </figure>
                 </div>
                 <div class="swiper-slide" data-swiper="1">
                     <figure class="img">
-                        <img src="../../assets/images/block3_mb_2.jpg" alt="block3_mb_2">
+                        <img src="./assets/images/block3_mb_2.jpg" alt="block3_mb_2">
                     </figure>
                 </div>
                 <div class="swiper-slide" data-swiper="2">
                     <figure class="img">
-                        <img src="../../assets/images/block3_mb_3.jpg" alt="block6_img">
+                        <img src="./assets/images/block3_mb_3.jpg" alt="block6_img">
                     </figure>
                 </div>
             </div>
         </div>
         <div class="block3__text">
             <figure class="block3__title pc wow fadeInUp" data-wow-delay="0.2s">
-                <img src="../../assets/images/block3_title.png" alt="block3_title">
+                <img src="./assets/images/block3_title.png" alt="block3_title">
             </figure>
             <ul class="block3__list wow fadeInUp" data-wow-delay="0.4s">
                 <li data-index="0" class="block3__list-text active">
@@ -229,11 +205,11 @@
 {# vitri #}
 <section class="block block4 vitri" id="vitri">
     <figure class="block4__map">
-        <img src="../../assets/images/block4_map.jpg" alt="block4_map">
+        <img src="./assets/images/block4_map.jpg" alt="block4_map">
     </figure>
     <div class="block4__content">
         <figure class="block4__title wow fadeInUp" data-wow-delay="0.1s">
-            <img src="../../assets/images/block4_title.png" alt="block4_title">
+            <img src="./assets/images/block4_title.png" alt="block4_title">
         </figure>
         <div class="block4__des wow fadeInRight" data-wow-delay="0.3s">
             <p>
@@ -254,7 +230,7 @@
 <section class="block block5">
     <div class="block5__heading">
         <figure class="block5__title wow fadeInUp" data-wow-delay="0.1s">
-            <img src="../../assets/images/block5_title.png" alt="block4_map">
+            <img src="./assets/images/block5_title.png" alt="block4_map">
         </figure>
         <div class="block5__des wow fadeInUp" data-wow-delay="0.1s">
             Verosa Park dần hoàn thiện, đẹp hơn, xanh hơn mỗi ngày. Từ tháng 5.2020, Verosa Park bắt đầu bàn giao và
@@ -262,28 +238,35 @@
             bị chào đón những cư dân đầu tiên dọn về
         </div>
     </div>
-    <div class="block5__slider">
-        <figure class="img">
-            <img src="../../assets/images/block5_slider.jpg" alt="block5_slider">
-        </figure>
-        <figure class="img">
-            <img src="../../assets/images/block5_slider.jpg" alt="block5_slider">
-        </figure>
-        <figure class="img">
-            <img src="../../assets/images/block5_slider.jpg" alt="block5_slider">
-        </figure>
+    <div class="block5__slider-wrap">
+        <div class="block5__slider">
+            <figure class="img">
+                <img src="./assets/images/block5_slider.jpg" alt="block5_slider">
+            </figure>
+            <figure class="img">
+                <img src="./assets/images/block5_slider.jpg" alt="block5_slider">
+            </figure>
+            <figure class="img">
+                <img src="./assets/images/block5_slider.jpg" alt="block5_slider">
+            </figure>
+        </div>
+
+        <button type='button' class='slick-prev prev'><img src='./assets/images/arrow_left.png'></button>
+        <button type='button' class='slick-next next'><img src='./assets/images/arrow_right.png'></button>
     </div>
+
+
 </section>
 {# phaply #}
 <section class="block block6 tienich" id="tienich">
     <figure class="block6__bg">
-        <img src="../../assets/images/block6_bg.jpg" alt="block1_bg">
+        <img src="./assets/images/block6_bg.jpg" alt="block1_bg">
     </figure>
     <div class="block6__wrapper">
         <div class="block6__content">
             <div class="block6__left">
                 <figure class="block6__title wow fadeInLeft" data-wow-delay="0.1s">
-                    <img src="../../assets/images/block6_title.png" alt="block6_title">
+                    <img src="./assets/images/block6_title.png" alt="block6_title">
                 </figure>
                 <div class="block6__des wow fadeInLeft" data-wow-delay="0.3s">
                     Verosa Park sở hữu 2 công viên và khu TDTT rộng khoảng 10.000m2 với điểm nhấn là hồ cảnh quan
@@ -307,27 +290,29 @@
             <div class="block6__right">
                 <div class="block6__slider">
                     <figure class="img">
-                        <img src="../../assets/images/block6_img.jpg" alt="block6_img">
+                        <img src="./assets/images/block6_img.jpg" alt="block6_img">
                     </figure>
                     <figure class="img">
-                        <img src="../../assets/images/block6_img.jpg" alt="block6_img">
+                        <img src="./assets/images/block6_img.jpg" alt="block6_img">
                     </figure>
                     <figure class="img">
-                        <img src="../../assets/images/block6_img.jpg" alt="block6_img">
+                        <img src="./assets/images/block6_img.jpg" alt="block6_img">
                     </figure>
                     <figure class="img">
-                        <img src="../../assets/images/block6_img.jpg" alt="block6_img">
+                        <img src="./assets/images/block6_img.jpg" alt="block6_img">
                     </figure>
                     <figure class="img">
-                        <img src="../../assets/images/block6_img.jpg" alt="block6_img">
+                        <img src="./assets/images/block6_img.jpg" alt="block6_img">
                     </figure>
                     <figure class="img">
-                        <img src="../../assets/images/block6_img.jpg" alt="block6_img">
+                        <img src="./assets/images/block6_img.jpg" alt="block6_img">
                     </figure>
                     <figure class="img">
-                        <img src="../../assets/images/block6_img.jpg" alt="block6_img">
+                        <img src="./assets/images/block6_img.jpg" alt="block6_img">
                     </figure>
                 </div>
+                <button type='button' class='slick-prev prev'><img src='./assets/images/arrow_left.png'></button>
+                <button type='button' class='slick-next next'><img src='./assets/images/arrow_right.png'></button>
             </div>
         </div>
     </div>
@@ -335,24 +320,24 @@
 {# tienich #}
 <section class="block block7" id="csbh">
     <figure class="block7__bg">
-        <img src="../../assets/images/block7_bg.png" alt="block7_bg">
+        <img src="./assets/images/block7_bg.png" alt="block7_bg">
     </figure>
     <div class="block7__wrapper">
         <div class="block7__left pc">
             <figure class="block7__left-text block7__left-text-1 wow fadeIn" data-wow-delay="0.1s">
-                <img src="../../assets/images/block7_text1.png" alt="nhan ngay xe xin len den 1.5 ty">
+                <img src="./assets/images/block7_text1.png" alt="nhan ngay xe xin len den 1.5 ty">
             </figure>
             <figure class="block7__left-text block7__left-text-2 wow fadeIn" data-wow-delay="0.2s">
-                <img src="../../assets/images/block7_text2.png" alt="chiet khau khi thanh toan nhanh">
+                <img src="./assets/images/block7_text2.png" alt="chiet khau khi thanh toan nhanh">
             </figure>
         </div>
         <div class="block7__right">
             <div class="block7__title">
                 <figure class="block7__title-top wow fadeIn" data-wow-delay="0.1s">
-                    <img src="../../assets/images/block7_title.png" alt="chinh sach ban hang">
+                    <img src="./assets/images/block7_title.png" alt="chinh sach ban hang">
                 </figure>
                 <figure class="block7__title-sub wow fadeInUp" data-wow-delay="0.3s">
-                    <img src="../../assets/images/block7_subtitle.png" alt="uu dai mo nhung can cuoi cung">
+                    <img src="./assets/images/block7_subtitle.png" alt="uu dai mo nhung can cuoi cung">
                 </figure>
                 <div class="block7__des wow fadeInUp" data-wow-delay="0.3s">
                     Số lượng cực kỳ giới hạn, Verosa Park đang chào đón những chủ nhân xứng tầm với những chương trình
@@ -363,16 +348,16 @@
                 <div class="mb">
                     <div class="block7__left">
                         <figure class="block7__left-text block7__left-text-1 wow fadeIn" data-wow-delay="0.1s">
-                            <img src="../../assets/images/block7_text1.png" alt="nhan ngay xe xin len den 1.5 ty">
+                            <img src="./assets/images/block7_text1.png" alt="nhan ngay xe xin len den 1.5 ty">
                         </figure>
                         <figure class="block7__left-text block7__left-text-2 wow fadeIn" data-wow-delay="0.2s">
-                            <img src="../../assets/images/block7_text2.png" alt="chiet khau khi thanh toan nhanh">
+                            <img src="./assets/images/block7_text2.png" alt="chiet khau khi thanh toan nhanh">
                         </figure>
                     </div>
                 </div>
             </div>
             <figure class="block7__img wow fadeIn" data-wow-delay="0.2s">
-                <img src="../../assets/images/block7_img.jpg" alt="block7_img">
+                <img src="./assets/images/block7_img.jpg" alt="block7_img">
             </figure>
         </div>
     </div>
@@ -380,13 +365,13 @@
 {# csbh #}
 <section class="block block8 csbh phaply" id="phaply">
     <figure class="block8__title wow fadeInUp" data-wow-delay="0.1s">
-        <img src="../../assets/images/block8_title.png" alt="block8_title">
+        <img src="./assets/images/block8_title.png" alt="block8_title">
     </figure>
     <div class="block8__wrapper wow fadeIn" data-wow-delay="0.3s">
         <div class="block8__item">
             <figure class="img">
                 <a href="#"></a>
-                <img src="../../assets/images/icon_phaply.png" alt="icon_phaply">
+                <img src="./assets/images/icon_phaply.png" alt="icon_phaply">
             </figure>
             <div class="text">
                 Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài sản khác gắn liền với đất số CT75660 ngày
@@ -396,7 +381,7 @@
         <div class="block8__item">
             <figure class="img">
                 <a href="#"></a>
-                <img src="../../assets/images/icon_phaply.png" alt="icon_phaply">
+                <img src="./assets/images/icon_phaply.png" alt="icon_phaply">
             </figure>
             <div class="text">
                 Văn bản số 11687/SXD-PTN&TTBĐS ngày 18.09.2019 của Sở xây dựng Tp Hồ Chí Minh về việc đủ điều kiện được
@@ -406,7 +391,7 @@
         <div class="block8__item">
             <figure class="img">
                 <a href="#"></a>
-                <img src="../../assets/images/icon_phaply.png" alt="icon_phaply">
+                <img src="./assets/images/icon_phaply.png" alt="icon_phaply">
             </figure>
             <div class="text">
                 Văn bản số 11688/SXD-PTN&TTBĐS ngày 18.09.2019 của Sở xây dựng Tp Hồ Chí Minh về việc đủ điều kiện được
@@ -416,7 +401,7 @@
         <div class="block8__item">
             <figure class="img">
                 <a href="#"></a>
-                <img src="../../assets/images/icon_phaply.png" alt="icon_phaply">
+                <img src="./assets/images/icon_phaply.png" alt="icon_phaply">
             </figure>
             <div class="text">
                 Giấy chứng nhận đăng ký doanh nghiệp số 0313018164.
@@ -425,7 +410,7 @@
         <div class="block8__item">
             <figure class="img">
                 <a href="#"></a>
-                <img src="../../assets/images/icon_phaply.png" alt="icon_phaply">
+                <img src="./assets/images/icon_phaply.png" alt="icon_phaply">
             </figure>
             <div class="text">
                 Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài sản khác gắn liền với đất số CT59957 ngày
@@ -435,7 +420,7 @@
         <div class="block8__item">
             <figure class="img">
                 <a href="#"></a>
-                <img src="../../assets/images/icon_phaply.png" alt="icon_phaply">
+                <img src="./assets/images/icon_phaply.png" alt="icon_phaply">
             </figure>
             <div class="text">
                 Giấy chứng nhận đăng ký doanh nghiệp số 0312519827.
@@ -446,44 +431,49 @@
 {# news #}
 <section class="block block9">
     <figure class="block9__title">
-        <img src="../../assets/images/block9_title.png" alt="block9_title">
+        <img src="./assets/images/block9_title.png" alt="block9_title">
     </figure>
     <div class="block9__slider">
         <div class="block9__item">
             <figure class="img" data-toggle="modal" data-target="#News">
-                <img src="../../assets/images/block9_img1.png" alt="block9_img1">
+                <img src="./assets/images/block9_img1.png" alt="block9_img1">
             </figure>
-            <div class="text" data-toggle="modal" data-target="#News">VEROSA PARK KHANG ĐIỀN: “SỞ HỮU NHÀ SANG – GIÁNG SINH RINH QUÀ”</div>
+            <div class="text" data-toggle="modal" data-target="#News">VEROSA PARK KHANG ĐIỀN: “SỞ HỮU NHÀ SANG – GIÁNG
+                SINH RINH QUÀ”</div>
         </div>
         <div class="block9__item">
             <figure class="img" data-toggle="modal" data-target="#News">
-                <img src="../../assets/images/block9_img2.png" alt="block9_img2">
+                <img src="./assets/images/block9_img2.png" alt="block9_img2">
             </figure>
-            <div class="text" data-toggle="modal" data-target="#News">VEROSA PARK KHANG ĐIỀN: “SỞ HỮU NHÀ SANG – GIÁNG SINH RINH QUÀ”</div>
+            <div class="text" data-toggle="modal" data-target="#News">VEROSA PARK KHANG ĐIỀN: “SỞ HỮU NHÀ SANG – GIÁNG
+                SINH RINH QUÀ”</div>
         </div>
         <div class="block9__item">
             <figure class="img" data-toggle="modal" data-target="#News">
-                <img src="../../assets/images/block9_img3.png" alt="block9_img3">
+                <img src="./assets/images/block9_img3.png" alt="block9_img3">
             </figure>
-            <div class="text" data-toggle="modal" data-target="#News">VEROSA PARK - KHANG ĐIỀN ĐƯỢC VINH DANH TẠI ASIA PROPERTY AWARDS 2019, HẠNG ...</div>
+            <div class="text" data-toggle="modal" data-target="#News">VEROSA PARK - KHANG ĐIỀN ĐƯỢC VINH DANH TẠI ASIA
+                PROPERTY AWARDS 2019, HẠNG ...</div>
         </div>
         <div class="block9__item">
             <figure class="img" data-toggle="modal" data-target="#News">
-                <img src="../../assets/images/block9_img4.jpg" alt="block9_img4">
+                <img src="./assets/images/block9_img4.jpg" alt="block9_img4">
             </figure>
             <div class="text" data-toggle="modal" data-target="#News">THÀNH LẬP THÀNH PHỐ THỦ ĐỨC</div>
         </div>
         <div class="block9__item">
             <figure class="img" data-toggle="modal" data-target="#News">
-                <img src="../../assets/images/block9_img1.png" alt="block9_img1">
+                <img src="./assets/images/block9_img1.png" alt="block9_img1">
             </figure>
-            <div class="text" data-toggle="modal" data-target="#News">VEROSA PARK KHANG ĐIỀN: “SỞ HỮU NHÀ SANG – GIÁNG SINH RINH QUÀ”</div>
+            <div class="text" data-toggle="modal" data-target="#News">VEROSA PARK KHANG ĐIỀN: “SỞ HỮU NHÀ SANG – GIÁNG
+                SINH RINH QUÀ”</div>
         </div>
         <div class="block9__item">
             <figure class="img" data-toggle="modal" data-target="#News">
-                <img src="../../assets/images/block9_img2.png" alt="block9_img2">
+                <img src="./assets/images/block9_img2.png" alt="block9_img2">
             </figure>
-            <div class="text" data-toggle="modal" data-target="#News">VEROSA PARK KHANG ĐIỀN: “SỞ HỮU NHÀ SANG – GIÁNG SINH RINH QUÀ”</div>
+            <div class="text" data-toggle="modal" data-target="#News">VEROSA PARK KHANG ĐIỀN: “SỞ HỮU NHÀ SANG – GIÁNG
+                SINH RINH QUÀ”</div>
         </div>
     </div>
 </section>
@@ -491,40 +481,20 @@
 <section class="block block10 lienhe" id="lienhe">
     <div class="form">
         <figure class="form__title">
-            <img src="../../assets/images/form_title_foot.png" alt="form_title">
+            <img src="./assets/images/form_title_foot.png" alt="form_title">
         </figure>
         <div class="form__content">
             <div class="form-group">
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Họ và tên"
-                    class="form-control block10Name"
-                >
+                <input type="text" name="name" placeholder="Họ và tên" class="form-control block10Name">
             </div>
             <div class="form-group">
-                <input
-                    type="text"
-                    name="phone"
-                    placeholder="Số điện thoại"
-                    class="form-control block10Phone"
-                >
+                <input type="text" name="phone" placeholder="Số điện thoại" class="form-control block10Phone">
             </div>
             <div class="form-group">
-                <input
-                    type="text"
-                    name="email"
-                    placeholder="Email"
-                    class="form-control block10Email"
-                >
+                <input type="text" name="email" placeholder="Email" class="form-control block10Email">
             </div>
             <div class="form-group">
-                <input
-                    type="text"
-                    name="note"
-                    placeholder="Lời nhắn"
-                    class="form-control block10Note"
-                >
+                <input type="text" name="note" placeholder="Lời nhắn" class="form-control block10Note">
             </div>
         </div>
         <div class="form__des">
@@ -534,67 +504,119 @@
         </div>
         <div class="text-center">
             <button disabled="disabled" class="form__submit button">
-                <img src="../../assets/images/button_color_origin.png" alt="form__submit">
+                <img src="./assets/images/button_color_origin.png" alt="form__submit">
             </button>
         </div>
     </div>
     <div class="block10__info">
         <div class="block10__logo">
             <figure class="logo_khangdien">
-                <img src="../../assets/images/logo_khangdien.png" alt="logo_khangdien">
+                <img src="./assets/images/logo_khangdien.png" alt="logo_khangdien">
             </figure>
             <figure class="logo_white">
-                <img src="../../assets/images/logo_white.png" alt="logo_white">
+                <img src="./assets/images/logo_white.png" alt="logo_white">
             </figure>
         </div>
         <figure class="line">
-            <img src="../../assets/images/block9_line.png" alt="block9_line">
+            <img src="./assets/images/block9_line.png" alt="block9_line">
         </figure>
         <ul class="block10__media">
             <li class="media">
-                <img class="img" src="../../assets/images/block10_icon_map.png" alt="block10_icon_map">
+                <img class="img" src="./assets/images/block10_icon_map.png" alt="block10_icon_map">
                 <span class="value">Gần vòng xoay Liên Phường, Võ Chí Công, Q.9, TP.HCM</span>
             </li>
             <li class="media">
-                <img class="img" src="../../assets/images/block10_icon_phone.png" alt="block10_icon_phone">
+                <img class="img" src="./assets/images/block10_icon_phone.png" alt="block10_icon_phone">
                 <span class="value">0823 968 368</span>
             </li>
             <li class="media">
-                <img class="img" src="../../assets/images/block10_icon_mail.png" alt="block10_icon_mail">
+                <img class="img" src="./assets/images/block10_icon_mail.png" alt="block10_icon_mail">
                 <span class="value">info@verosapark.com</span>
             </li>
         </ul>
     </div>
 </section>
 {# modal news #}
-<div
-    class="modal fade in show news"
-    id="News"
-    tabindex="-1"
-    role="dialog"
->
+<div class="modal fade in show news" id="News" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <span class="close" data-dismiss="modal" aria-label="Close">
-                <img src="../../assets/images/close_modal.png" alt="">
+                <img src="./assets/images/close_modal.png" alt="">
             </span>
             <div class="modal-body">
                 <div class="news__title">
                     NHỮNG DỰ ÁN ĐỊNH HƯỚNG PHÁT TRIỂN HẠ TẦNG TP. THỦ ĐỨC
                 </div>
                 <div class="news__content">
-                    <p>Theo ông Trần Văn Bảy, Chủ tịch UBND quận 9, do những tuyến đường được đầu tư, nâng cấp thuộc trục giao thông chính của khu vực, mang tính chất kết nối liên quận, liên phường nên việc đầu tư nhằm thúc đẩy phát triển hạ tầng chung, đặc biệt, sẽ định hướng phát triển hạ tầng TP. Thủ Đức trong tương lai.</p>
-                    <p>Trao đổi với Nhadautu.vn, ông Trần Văn Bảy, Chủ tịch UBND quận 9 cho biết, ngoài những dự án đang được triển khai, thì hiện quận và Ban quản lý dự án đầu tư xây dựng các công trình giao thông TP.HCM đã lập thủ tục xin chủ trương UBND TP.HCM tiến hành thực hiên nâng cấp, mở rộng một số tuyến đường trọng điểm trên địa bàn trong giai đoạn từ 2021-2025.</p>
-                    <p>“Hiện một vài đoạn trên các tuyến đường như Đỗ Xuân Hợp, Lò Lu, Nguyễn Duy Trinh… đã được triển khai trước đó, còn một số khác đã lập thủ tục đề xuất và vẫn đang trong quá trình chờ phê duyệt của UBND TP.HCM để thực hiện”, ông Bảy thông tin.</p>
-                    <p>Trong khi đó, nói về mục tiêu đầu tư những tuyến đường, ông Bảy cho hay, do đây là các trục giao thông chính của khu vực, mang tính chất kết nối liên quận, liên phường nên việc đầu tư nhằm thúc đẩy phát triển hạ tầng chung, đặc biệt, sẽ định hướng phát triển hạ tầng TP. Thủ Đức trong tương lai.</p>
+                    <p>Theo ông Trần Văn Bảy, Chủ tịch UBND quận 9, do những tuyến đường được đầu tư, nâng cấp thuộc
+                        trục giao thông chính của khu vực, mang tính chất kết nối liên quận, liên phường nên việc đầu tư
+                        nhằm thúc đẩy phát triển hạ tầng chung, đặc biệt, sẽ định hướng phát triển hạ tầng TP. Thủ Đức
+                        trong tương lai.</p>
+                    <p>Trao đổi với Nhadautu.vn, ông Trần Văn Bảy, Chủ tịch UBND quận 9 cho biết, ngoài những dự án đang
+                        được triển khai, thì hiện quận và Ban quản lý dự án đầu tư xây dựng các công trình giao thông
+                        TP.HCM đã lập thủ tục xin chủ trương UBND TP.HCM tiến hành thực hiên nâng cấp, mở rộng một số
+                        tuyến đường trọng điểm trên địa bàn trong giai đoạn từ 2021-2025.</p>
+                    <p>“Hiện một vài đoạn trên các tuyến đường như Đỗ Xuân Hợp, Lò Lu, Nguyễn Duy Trinh… đã được triển
+                        khai trước đó, còn một số khác đã lập thủ tục đề xuất và vẫn đang trong quá trình chờ phê duyệt
+                        của UBND TP.HCM để thực hiện”, ông Bảy thông tin.</p>
+                    <p>Trong khi đó, nói về mục tiêu đầu tư những tuyến đường, ông Bảy cho hay, do đây là các trục giao
+                        thông chính của khu vực, mang tính chất kết nối liên quận, liên phường nên việc đầu tư nhằm thúc
+                        đẩy phát triển hạ tầng chung, đặc biệt, sẽ định hướng phát triển hạ tầng TP. Thủ Đức trong tương
+                        lai.</p>
                     <img src="./assets/images/news_popup.jpg" alt="Giá là yếu tố chính quyết định việc mua căn hộ">
                     <p>
                         Đường Đỗ Xuân Hợp
 
-    Về hiện trạng, dự án có lý trình từ ngã tư đường Bình Thái đến Nguyễn Duy Trinh, đường bê tông nhựa nóng, với bề rộng mặt đường khoảng 7m-10m (lộ giới 30m) và có chiều dài khoảng 4.769m.
-    
-    Theo UBND quận 9, trên tuyến này hiện có 2 dự án đang triển khai thi công là dự án Xây dựng cầu Nam Lý, có tổng mức đầu tư khoảng 529 tỷ đồng; dự án nâng cấp, mở rộng đường Đỗ Xuân Hợp đoạn từ cầu Nam Lý đến đường Nguyễn Duy Trinh với quy mô rộng 30m, chiều dài 1.830m, có tổng mức đầu tư phần xây lắp khoảng 360 tỷ đồng (chưa tính chi phí bồi thường và lập dự án bồi thường riêng).
+                        Về hiện trạng, dự án có lý trình từ ngã tư đường Bình Thái đến Nguyễn Duy Trinh, đường bê tông
+                        nhựa nóng, với bề rộng mặt đường khoảng 7m-10m (lộ giới 30m) và có chiều dài khoảng 4.769m.
+
+                        Theo UBND quận 9, trên tuyến này hiện có 2 dự án đang triển khai thi công là dự án Xây dựng cầu
+                        Nam Lý, có tổng mức đầu tư khoảng 529 tỷ đồng; dự án nâng cấp, mở rộng đường Đỗ Xuân Hợp đoạn từ
+                        cầu Nam Lý đến đường Nguyễn Duy Trinh với quy mô rộng 30m, chiều dài 1.830m, có tổng mức đầu tư
+                        phần xây lắp khoảng 360 tỷ đồng (chưa tính chi phí bồi thường và lập dự án bồi thường riêng).
                     </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{# modal news #}
+<div class="modal fade in show popup" id="popup" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <span class="close" data-dismiss="modal" aria-label="Close">
+                <img src="./assets/images/close_modal.png" alt="">
+            </span>
+            <div class="modal-body">
+                <div class="form">
+                    <figure class="form__title">
+                        <img src="./assets/images/form_title.png" alt="form_title">
+                    </figure>
+                    <div class="form__content">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Họ và tên" class="form-control block1Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="phone" placeholder="Số điện thoại"
+                                class="form-control block1Phone">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="email" placeholder="Email" class="form-control block1Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="note" placeholder="Lời nhắn" class="form-control block1Note">
+                        </div>
+                    </div>
+                    <div class="form__des">
+                        <p>Dự án đã hoàn thiện, đang bàn giao</p>
+                        <p>Pháp lý minh bạch, sổ đổ từng lô</p>
+                        <p>Nhiều CSBH hấp dẫn</p>
+                    </div>
+                    <div class="text-center">
+                        <button class="form__submit button" type="submit" disabled>
+                            <img src="./assets/images/button.png" alt="form__submit">
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
