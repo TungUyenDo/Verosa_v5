@@ -12,22 +12,47 @@ var MainScript = (function () {
 
     var _init = function () {
         // self.PopupValidateForm();
-        // self.Block1ValidateForm();
-        // self.Block10ValidateForm();
-        self.Block3SliderRunActiveList();
+        self.Block1ValidateForm();
+        self.Block10ValidateForm();
         self.Block5Slider();
         self.Block6SliderRunActiveList();
         self.Block9Slider();
-        // self.Block8Tabs();
+        self.Block3Swiper();
         self.Menu();
         self.OpenMenu();
-        // self.CloseMenu();
-        // self.lightbox();
     }
     var _resize = function () { }
 
     this.lightbox = function () {
         $('.fancybox').fancybox();
+    }
+    this.Block3Swiper = function () {
+
+        const swiper = new Swiper('.swiper-container', {
+            slidesPerView: 3,
+            loop: true,
+            autoplay: true,
+            centeredSlides: true,
+            navigation: {
+                nextEl: '.swiper-next',
+                prevEl: '.swiper-prev',
+            },
+        });
+
+        swiper.on('slideChange', function (swiper) {
+            let nextSlide = $(this)[0].realIndex;
+            $(".block3__list li").removeClass("active");
+            $(".block3__list li[data-index='" + nextSlide + "']").addClass("active");
+
+        });
+
+        $(".block3__list li").on('click', function () {
+            $(".block3__list li").removeClass("active");
+            $(this).addClass("active");
+            var numberSlider = $(this).attr("data-index");
+            swiper.swipeTo(parseInt(numberSlider))
+        });
+
     }
 
     this.Block9Slider = function () {
@@ -41,6 +66,29 @@ var MainScript = (function () {
             arrows: false,
             dots: true,
             autoplay: false,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
         });
     }
 
@@ -95,34 +143,6 @@ var MainScript = (function () {
                 }
             ]
         });
-    }
-
-    this.Block3SliderRunActiveList = function () {
-        // if ($(".block3__slider").length <= 0) { return false }
-        // $(".block3__slider").slick({
-        //     // autoplay: true,
-        //     autoplaySpeed: 2000,
-        //     infinite: true,
-        //     slidesToShow: 3,
-        //     slidesToScroll: 1,
-        //     centerMode: true,
-        //     centerPadding: '60px',
-        //     dots: false,
-        //     arrows: false,
-        // });
-
-        // $(".block3__slider").on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-        //     $(".block3__list li").removeClass("active");
-        //     $(".block3__list li[data-index='" + nextSlide + "']").addClass("active");
-        //     console.log(1)
-        // });
-
-        // $(".block3__list li").on('click', function () {
-        //     $(".block3__list li").removeClass("active");
-        //     $(this).addClass("active");
-        //     var numberSlider = $(this).attr("data-index");
-        //     $(".block3__slider").slick('slickGoTo', parseInt(numberSlider));
-        // });
     }
 
     this.PopupValidateForm = function () {

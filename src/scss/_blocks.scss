@@ -1,13 +1,18 @@
 $color1: #e3a371;
-
+@mixin mb_fs14 {
+    font-size: 14px;
+}
 .hambuger {
-
+    cursor: pointer;
+    @media (min-width: 768px) {
+        display: none;
+    }
     .bar {
         width: 30px;
         height: 2px;
         background-color: #fff;
         margin: 5px 0;
-        transition: 0.3s;
+        transition: 0.2s all ease;
         display: block;
     }
 
@@ -20,7 +25,7 @@ $color1: #e3a371;
         }
 
         .bar1 {
-            transform: rotate(-45deg) translate(-3px, 2px)
+            transform: rotate(-45deg) translate(-3px, 2px);
         }
 
         .bar2 {
@@ -30,12 +35,6 @@ $color1: #e3a371;
         .bar3 {
             transform: rotate(45deg) translate(-8px, -8px);
         }
-    }
-}
-
-@media(min-width:991px) {
-    .hambuger {
-        display: none
     }
 }
 
@@ -54,21 +53,20 @@ $color1: #e3a371;
     height: 7.396vw;
     z-index: 2;
 
-    @media(max-width:767px) {
+    @media (max-width: 767px) {
         height: auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-top: 15px;
-        padding-bottom: 15px;
+        @include flexbox;
+        @include align-items(center);
+        @include justify-content(space-between);
+        padding-top: 12px;
+        padding-bottom: 40px;
     }
-
 
     &__logo {
         width: 9.375vw;
 
-        @media(max-width:767px) {
-            width: 140px;
+        @media (max-width: 767px) {
+            width: 115px;
         }
 
         img {
@@ -78,45 +76,40 @@ $color1: #e3a371;
 
     &__nav {
         @include flexbox;
+        @include transition(all 0.3s ease);
+        transition-delay: 0.3s;
         list-style: none;
         padding: 0;
         margin: 0;
         margin-left: 2.083vw;
-        transition-delay: 0.5s;
-        transition: all 0.5s ease;
-
-        &.show {
-            visibility: visible;
-            z-index: 999;
-            width: 100vw;
-            opacity: 1;
-            background: rgb(9, 84, 109);
-        }
-
-        @media(max-width:767px) {
+        @media (max-width: 767px) {
             @include flex-direction(column);
+            @include transition(all 0.3s ease);
+            // transition-delay: 0.3s;
             margin: 0;
             padding: 20px;
-            padding-top: 35px;
-
+            padding-top: 50px;
             height: 100%;
             position: fixed;
             right: 0;
             top: 0;
-            width: 100%;
-            opacity: 0;
-            visibility: hidden;
-            // transition: all 0.3s;
+            // width: 50vw;
             height: 100%;
-            transition-delay: 0.5s;
-            transition: all 0.5s ease;
+            width: 280px;
+            transform: translateX(280px);
+
+            &.show {
+                z-index: 999;
+                background: rgb(9, 84, 109);
+                transform: translateX(0);
+            }
         }
     }
 
     &__nav-item {
         margin: 0 0.365vw;
 
-        @media(max-width:767px) {
+        @media (max-width: 767px) {
             text-align: center;
         }
     }
@@ -133,7 +126,7 @@ $color1: #e3a371;
         display: inline-block;
         line-height: normal;
 
-        @media(max-width:767px) {
+        @media (max-width: 767px) {
             font-size: 14px;
             margin: 7px 0;
             padding: 5px 10px;
@@ -182,10 +175,11 @@ $color1: #e3a371;
     &__title {
         margin-bottom: 1.563vw;
 
-        @media(max-width:767px) {
-            max-width: 70%;
+        @media (max-width: 767px) {
+            max-width: 80%;
             margin-left: auto;
             margin-right: auto;
+            margin-bottom: 15px;
         }
     }
 
@@ -197,6 +191,9 @@ $color1: #e3a371;
         padding-left: 3.385vw;
         color: #fff;
         margin-bottom: 1.042vw;
+        @media (max-width: 767px) {
+            margin-bottom: 20px;
+        }
 
         p {
             font-size: 1.198vw;
@@ -205,6 +202,10 @@ $color1: #e3a371;
             padding-left: 0.938vw;
             display: block;
             margin-bottom: 0.156vw;
+            @media (max-width: 767px) {
+                @include mb_fs14;
+                padding-left: 15px;
+            }
 
             &::before {
                 position: absolute;
@@ -215,6 +216,11 @@ $color1: #e3a371;
                 background-color: #fff;
                 left: 0;
                 top: 0.573vw;
+                @media (max-width: 767px) {
+                    width: 5px;
+                    height: 5px;
+                    top: 6px;
+                }
             }
         }
     }
@@ -228,11 +234,9 @@ $color1: #e3a371;
         margin-right: auto;
 
         &:disabled,
-        &[disabled=disabled] {
-            cursor: no-drop
+        &[disabled="disabled"] {
+            cursor: no-drop;
         }
-
-
     }
 
     .form-group {
@@ -245,9 +249,18 @@ $color1: #e3a371;
         background-color: #fff;
         padding: 0.521vw 1.042vw;
         font-size: 1.146vw;
+        @media (max-width: 767px) {
+            @include mb_fs14;
+            height: 45px;
+            border-radius: 25px;
+            padding: 10px;
+        }
 
         @mixin placeholder {
             color: #769ba7;
+            @media (max-width: 767px) {
+                @include mb_fs14;
+            }
         }
 
         &::-webkit-input-placeholder {
@@ -271,33 +284,36 @@ $color1: #e3a371;
 .mb {
     display: none;
 
-    @media(max-width:767px) {
-        display: block;
+    @media (max-width: 767px) {
+        display: block !important;
     }
 }
 
 .pc {
-    @media(max-width:767px) {
-        display: none;
+    @media (max-width: 767px) {
+        display: none !important;
     }
 }
 
 .block1 {
     // height: 1080px;
     position: relative;
-
-    &__bg {}
+    @media (max-width: 767px) {
+        overflow: hidden;
+    }
+    &__bg {
+    }
 
     &__text {
         position: absolute;
-        bottom: -6.510vw;
+        bottom: -6.51vw;
         left: 0;
         width: 47.292vw;
 
-        @media(max-width:767px) {
+        @media (max-width: 767px) {
             bottom: auto;
-            width: 64vw;
-            top: 16vw;
+            width: 130%;
+            top: 0;
         }
     }
 
@@ -306,14 +322,13 @@ $color1: #e3a371;
         top: 10.417vw;
         right: 7.7vw;
 
-        @media(max-width:767px) {
+        @media (max-width: 767px) {
+            background: linear-gradient(180deg, #08465ba3 0%, #0a4660 100%);
             position: relative;
             top: 0;
             right: 0;
-
-            background: linear-gradient(180deg, #08465ba3 0%, #0a4660 100%);
             width: 100%;
-            padding: 50px;
+            padding: 50px 5vw;
         }
     }
 }
@@ -323,18 +338,22 @@ $color1: #e3a371;
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: top center;
-    min-height: 1080px;
+    min-height: 56.25vw;
 
-    @media(max-width:767px) {
+    @media (max-width: 767px) {
         background-image: none;
+        min-height: auto;
+    }
+    .highlight {
+        color: #f3c39f;
     }
 
     &__content {
-        // position: absolute;
-        padding-top: 230px;
-        padding-left: 65px;
+        padding-top: 11.979vw;
+        padding-left: 3.385vw;
+        background: linear-gradient(180deg, #08465bc4 50%, #0a466000 100%);
 
-        @media(max-width:767px) {
+        @media (max-width: 767px) {
             padding: 0;
             padding: 40px;
             padding-bottom: 20px;
@@ -344,12 +363,13 @@ $color1: #e3a371;
     &__title {
         position: absolute;
         width: 28.646vw;
-        left: 32vw;
-        top: 130px;
+        left: 33.073vw;
+        top: 6.771vw;
 
-        @media(max-width:767px) {
+        @media (max-width: 767px) {
             position: static;
-            width: 80%;
+            width: 100%;
+            max-width: 320px;
             margin-left: auto;
             margin-right: auto;
             left: 0;
@@ -357,6 +377,7 @@ $color1: #e3a371;
 
             &.mb {
                 width: 100%;
+                max-width: 100%;
             }
         }
 
@@ -372,48 +393,59 @@ $color1: #e3a371;
         line-height: 1.198vw;
         margin-bottom: 2.604vw;
 
-        @media(max-width:767px) {
-            color: #09546d;
+        @media (max-width: 767px) {
             width: 100%;
             font-size: 18px;
             line-height: normal;
+            margin-bottom: 25px;
         }
     }
 
     &__items {
         @include flexbox;
+        @include flex-wrap(wrap);
         color: #fff;
 
-        @media(max-width:767px) {
-            color: #09546d;
+        @media (max-width: 767px) {
             font-size: 16px;
         }
 
         .item {
             text-align: center;
             width: 100%;
+            @media (max-width: 767px) {
+                width: 30% !important;
+                margin-bottom: 20px;
+            }
+            @media (max-width: 480px) {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
 
             &:nth-child(1) {
-                max-width: 220px;
+                width: 11.458vw;
 
                 .img {
                     max-width: 125px;
+                    width: 100%;
                 }
             }
 
             &:nth-child(2) {
-                max-width: 200px;
+                width: 10.417vw;
 
                 .img {
                     max-width: 115px;
+                    width: 100%;
                     margin-bottom: 25px;
                 }
             }
 
             &:nth-child(3) {
-                max-width: 290px;
+                width: 15.104vw;
 
                 .img {
+                    width: 100%;
                     max-width: 130px;
                 }
             }
@@ -421,7 +453,7 @@ $color1: #e3a371;
             .img {
                 margin-left: auto;
                 margin-right: auto;
-                margin-bottom: 20px;
+                margin-bottom: 1.042vw;
 
                 img {
                     width: 100%;
@@ -439,9 +471,16 @@ $color1: #e3a371;
     }
 
     &__button {
-        max-width: 340px;
-        margin-left: 150px;
-        margin-top: 45px;
+        width: 17.708vw;
+        margin-left: 7.813vw;
+        margin-top: 2.344vw;
+        @media (max-width: 767px) {
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            max-width: 300px;
+            margin-top: 30px;
+        }
 
         img {
             width: 100%;
@@ -449,21 +488,22 @@ $color1: #e3a371;
     }
 
     &__play {
-        max-width: 260px;
+        width: 13.542vw;
         position: absolute;
-        right: 295px;
-        top: 420px;
+        right: 15.365vw;
+        top: 21.875vw;
         cursor: pointer;
 
-        @media(max-width:767px) {
+        @media (max-width: 767px) {
+            @include transform(translateX(-50%));
             right: auto;
             left: 50%;
             top: auto;
-            bottom: 200px;
+            bottom: 20vw;
             cursor: pointer;
-            @include transform(translateX(-50%));
+            width: 100%;
+            max-width: 190px;
         }
-
     }
 }
 
@@ -473,34 +513,38 @@ $color1: #e3a371;
     background-repeat: no-repeat;
     background-position: top center;
     // height: 825px;
+    @media (max-width: 767px) {
+        padding: 50px 0;
+    }
 
     &__wrapper {
         @include flexbox;
-        padding: 0 80px;
+        padding: 0 4.167vw;
 
-        @media(max-width:767px) {
+        @media (max-width: 767px) {
             @include flex-direction(column);
-            padding-bottom: 50px;
+            padding-bottom: 0;
         }
     }
 
     &__slider {
-        max-width: 990px;
-        @include flexbox;
-        @include align-items(center);
-        margin-right: 80px;
-
-        @media(max-width:767px) {
+        width: 51.563vw;
+        @include transform(translateY(-2.604vw));
+        @media (max-width: 767px) {
+            @include transform(none);
+            width: 80%;
             margin-bottom: 30px;
-            max-width: 100%;
         }
+        @media (max-width: 480px) {
+            width: 100%;
+        }
+    }
 
-        .img {
-            margin: 0 30px;
-
-            &:nth-child(2) {
-                transform: translateY(-60px);
-            }
+    .swiper-slide {
+        @include transform(scale(0.7) translateY(1.823vw));
+        @include transition(all 0.3s ease);
+        &.swiper-slide-active {
+            @include transform(scale(1));
         }
     }
 
@@ -511,13 +555,19 @@ $color1: #e3a371;
         @include align-items(flex-start);
         @include flex-direction(column);
 
-        @media(max-width:767px) {
+        @media (max-width: 767px) {
             width: 100%;
         }
     }
 
     &__title {
-        margin-bottom: 30px;
+        margin-bottom: 1.563vw;
+        @media (max-width: 767px) {
+            max-width: 330px;
+            margin-right: auto;
+            margin-left: auto;
+            margin-bottom: 20px;
+        }
     }
 
     &__list {
@@ -526,24 +576,33 @@ $color1: #e3a371;
         margin: 0;
         width: 80%;
 
-        @media(max-width:767px) {
+        @media (max-width: 767px) {
             width: 100%;
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 
     &__list-text {
         color: #fff;
-        font-size: 21px;
-        line-height: 30px;
+        font-size: 1.094vw;
+        line-height: 1.563vw;
         line-height: normal;
         font-family: $ICIELDOMAINEDISPLAYMEDIUM;
-
+        @media (max-width: 767px) {
+            @include mb_fs14;
+            line-height: 17px;
+        }
         &.active {
             color: #f1c29f;
         }
 
         &:not(:last-child) {
-            margin-bottom: 22px;
+            margin-bottom: 1.146vw;
+            @media (max-width: 767px) {
+                margin-bottom: 10px;
+            }
         }
     }
 }
@@ -551,9 +610,9 @@ $color1: #e3a371;
 .block4 {
     @include flexbox;
     background-color: #fbd7a9;
-    border-top: 10px solid #0a222f;
+    border-top: 0.521vw solid #0a222f;
 
-    @media(max-width:767px) {
+    @media (max-width: 767px) {
         @include flex-direction(column);
         padding-top: 50px;
     }
@@ -561,7 +620,7 @@ $color1: #e3a371;
     &__map {
         width: 53.333%;
 
-        @media(max-width:767px) {
+        @media (max-width: 767px) {
             width: 100%;
             order: 2;
         }
@@ -572,37 +631,44 @@ $color1: #e3a371;
     }
 
     &__content {
-        max-width: 760px;
+        width: 39.583vw;
         margin-left: 0;
-        margin-top: 185px;
-        margin-bottom: 90px;
+        margin-top: 9.635vw;
+        margin-bottom: 4.688vw;
 
-        @media(max-width:767px) {
+        @media (max-width: 767px) {
+            width: 100%;
             margin: 0 auto;
             max-width: 80%;
             margin-top: 20px;
         }
     }
 
-    &__title {}
+    &__title {
+        @media (max-width: 767px) {
+            max-width: 435px;
+            margin: 0 auto;
+        }
+    }
 
     &__des {
-        max-width: 515px;
-        margin-left: 150px;
-        margin-top: 30px;
-        font-size: 21px;
-        line-height: 25px;
+        width: 26.823vw;
+        margin-left: 7.813vw;
+        margin-top: 1.563vw;
+        font-size: 1.094vw;
+        line-height: 1.302vw;
         color: #09546d;
         font-family: $ICIELDOMAINEDISPLAYMEDIUM;
         text-align: justify;
 
-        @media(max-width:767px) {
+        @media (max-width: 767px) {
+            width: 100%;
             margin: 0 auto;
-            max-width: 80%;
+            max-width: 100%;
             margin-top: 20px;
-
+            line-height: normal;
+            @include mb_fs14;
         }
-
     }
 }
 
@@ -611,38 +677,62 @@ $color1: #e3a371;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: top center;
-    padding-top: 60px;
-
+    padding-top: 3.125vw;
+    @media (max-width: 767px) {
+        padding-top: 50px;
+        padding-bottom: 30px;
+        margin-bottom: -1px;
+    }
     &__heading {
-        max-width: 525px;
+        width: 27.344vw;
         margin-left: auto;
         margin-right: auto;
+        @media (max-width: 767px) {
+            width: 100%;
+            margin: 0 auto;
+            max-width: 80%;
+        }
     }
 
     &__title {
-        margin-bottom: 10px;
+        margin-bottom: 0.521vw;
+        @media (max-width: 767px) {
+            max-width: 435px;
+            margin-bottom: 10px;
+        }
     }
 
     &__des {
         font-family: $ICIELDOMAINEDISPLAYMEDIUM;
         color: #09546d;
-        font-size: 21px;
-        line-height: 25px;
+        font-size: 1.094vw;
+        line-height: 1.302vw;
         font-weight: 500;
-        margin-bottom: 25px;
+        margin-bottom: 1.302vw;
+        @media (max-width: 767px) {
+            @include mb_fs14;
+            line-height: normal;
+            margin-bottom: 25px;
+        }
     }
 
     .slick-next {
-        right: 90px;
+        right: 4.688vw;
+        @media (max-width: 767px) {
+            right: 15px;
+        }
     }
 
     .slick-prev {
-        left: 90px;
+        left: 4.688vw;
+        @media (max-width: 767px) {
+            left: 15px;
+        }
     }
 
     .slick-slide {
         opacity: 0.5;
-        padding: 0 12px;
+        padding: 0 0.625vw;
     }
 
     .slick-center {
@@ -650,17 +740,24 @@ $color1: #e3a371;
     }
 
     .slick-arrow {
-        width: 55px;
+        width: 2.865vw;
     }
 }
 
 .block6 {
     $left: 24.7395%;
     $right: 61.4583%;
-    height: 1030px;
+    height: 53.646vw;
+    @media (max-width: 767px) {
+        height: auto;
+    }
 
     &__bg {
         position: absolute;
+        height: 100%;
+        img {
+            height: 100%;
+        }
     }
 
     &__content {
@@ -671,15 +768,13 @@ $color1: #e3a371;
     }
 
     &__wrapper {
-        padding-left: 115px;
-        padding: 100px;
-        padding-top: 160px;
+        padding: 8.333vw 5.208vw 5.208vw 5.99vw;
     }
 
     &__left {
         // width: $left;
         flex: 1;
-        margin-right: 60px;
+        margin-right: 3.125vw;
         color: #fff;
     }
 
@@ -687,14 +782,16 @@ $color1: #e3a371;
         width: 61.458vw;
         position: relative;
 
-        @media(max-width: 767px) {
+        @media (max-width: 767px) {
             width: 100%;
         }
     }
 
     &__slider {
-        padding-bottom: 115px;
+        padding-bottom: 5.99vw;
         position: relative;
+        @media (max-width: 767px) {
+        }
 
         img {
             width: 100%;
@@ -702,40 +799,64 @@ $color1: #e3a371;
     }
 
     &__des {
-        font-size: 21px;
-        line-height: 25px;
         text-align: justify;
-        margin-bottom: 25px;
+        font-size: 1.094vw;
+        line-height: 1.302vw;
+        margin-bottom: 1.302vw;
+        @media (max-width: 767px) {
+            @include mb_fs14;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
     }
 
     &__title {
-        margin-bottom: 10px;
+        margin-bottom: 0.521vw;
+        @media (max-width: 767px) {
+            margin-bottom: 20px;
+        }
     }
 
     &__list {
-        font-size: 23px;
         list-style: none;
         padding: 0;
         margin: 0;
-        margin-left: 7px;
+        margin-left: 0.365vw;
+        font-size: 1.198vw;
+        @media (max-width: 767px) {
+            @include mb_fs14;
+            margin-bottom: 30px;
+            max-width: 300px;
+        }
     }
 
     &__list-ulti {
-        padding: 5px 10px;
-        border-radius: 50px;
-        padding-left: 40px;
         position: relative;
-        margin-bottom: 1px;
+        padding: 0.26vw 0.521vw;
+        border-radius: 2.604vw;
+        padding-left: 2.083vw;
+        margin-bottom: 0.052vw;
+        @media (max-width: 767px) {
+            padding-left: 24px;
+            margin-bottom: 1px;
+        }
 
         &::before {
             position: absolute;
-            content: '';
-            width: 12px;
-            height: 12px;
+            content: "";
             border-radius: 50%;
             background-color: #09546d;
-            left: 15px;
-            top: 15px;
+            left: 0.781vw;
+            top: 0.781vw;
+            width: 0.625vw;
+            height: 0.625vw;
+            @media (max-width: 767px) {
+                @include mb_fs14;
+                width: 5px;
+                height: 5px;
+                top: 8px;
+                left: 10px;
+            }
         }
 
         &:hover,
@@ -750,14 +871,14 @@ $color1: #e3a371;
     }
 
     .slick-arrow {
-        width: 40px;
+        width: 2.083vw;
         height: auto;
         top: auto;
         transform: none;
         bottom: 0;
     }
 
-    $vitriArrow: calc(50% - 90px);
+    $vitriArrow: calc(50% - 4.688vw);
 
     .slick-next {
         right: $vitriArrow;
@@ -769,16 +890,26 @@ $color1: #e3a371;
 }
 
 .block7 {
-    padding-bottom: 115px;
-
+    padding-bottom: 5.99vw;
+    @media (max-width: 767px) {
+        padding: 0;
+    }
     &__bg {
         position: absolute;
+        @media (max-width: 767px) {
+            display: none;
+        }
     }
 
     &__wrapper {
         @include flexbox;
         position: relative;
         z-index: 1;
+        @media (max-width: 767px) {
+            @include flex-direction(column);
+            background: linear-gradient(180deg, #7198a4 0%, #a2c5ed 100%);
+            padding-top: 20px;
+        }
     }
 
     &__left {
@@ -786,121 +917,206 @@ $color1: #e3a371;
         @include flex-direction(column);
 
         width: 33.0729%;
+        @media (max-width: 767px) {
+            width: 100%;
+            @include flexbox;
+            @include align-items(center);
+            @include flex-direction(row);
+            @include justify-content(space-between);
+            margin-bottom: 10px;
+            margin-top: 15px;
+        }
 
         &-text {
-            max-width: 460px;
-
-            img {
+            width: 23.958vw;
+            @media (max-width: 767px) {
                 width: 100%;
+                max-width: 45%;
+                margin: 2vw 0 !important;
             }
         }
 
         &-text-1 {
-            margin-bottom: 80px;
+            margin-bottom: 4.167vw;
         }
 
-        &-text-2 {}
+        &-text-2 {
+        }
     }
 
     &__right {
         width: 65.625%;
         margin-left: auto;
+        @media (max-width: 767px) {
+            width: 100%;
+            margin-left: 0;
+        }
     }
 
     &__title {
-        max-width: 975px;
+        width: 50.781vw;
+        @media (max-width: 767px) {
+            width: 100%;
+            max-width: 80%;
+            margin: 0 auto;
+        }
     }
 
     &__title-top {
-        max-width: 620px;
+        width: 32.292vw;
+        @media (max-width: 767px) {
+            width: 100%;
+        }
     }
 
     &__title-sub {
-        margin-bottom: 15px;
+        margin-bottom: 0.781vw;
+        @media (max-width: 767px) {
+            margin-bottom: 15px;
+        }
     }
 
     &__des {
         color: #063d55;
         font-family: $ICIELDOMAINEDISPLAYMEDIUM;
-        font-size: 25px;
-        line-height: 28px;
-        margin-bottom: 25px;
+        font-size: 1.302vw;
+        line-height: 1.458vw;
+        margin-bottom: 1.302vw;
+        @media (max-width: 767px) {
+            @include mb_fs14;
+            line-height: 17px;
+        }
     }
 
     &__img {
-        margin-left: 20px;
+        margin-left: 1.042vw;
+        @media (max-width: 767px) {
+            margin: 0;
+        }
     }
 }
 
 .block8 {
     background-color: #f5f4f4;
-    padding-bottom: 60px;
-
+    padding-bottom: 3.125vw;
+    @media (max-width: 767px) {
+        padding: 50px 20px;
+    }
     &__title {
-        max-width: 480px;
         margin: 0 auto;
-        margin-bottom: 20px;
-
+        width: 25vw;
+        margin-bottom: 1.042vw;
         @include transform(translateY(-40px));
+        @media (max-width: 767px) {
+            width: 100%;
+            max-width: 435px;
+            margin-bottom: 20px;
+            @include transform(none);
+        }
     }
 
     &__wrapper {
         @include flexbox;
         @include flex-wrap(wrap);
-        max-width: 1350px;
         margin-left: auto;
         margin-right: auto;
+        width: 70.313vw;
+        @media (max-width: 767px) {
+            width: 100%;
+        }
     }
 
     &__item {
-        width: calc(33.3% - 60px);
-        margin: 0 30px;
         text-align: center;
-        margin-bottom: 20px;
+        width: calc(33.3% - 3.125vw);
+        margin: 0 1.563vw;
+        margin-bottom: 1.042vw;
 
-        .img {
-            max-width: 190px;
+        @media (max-width: 768px) {
+            width: calc(50% - 3.125vw);
+            max-width: 80%;
             margin-left: auto;
             margin-right: auto;
+        }
+        @media (max-width: 600px) {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .img {
+            width: 9.896vw;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            @media (max-width: 767px) {
+                width: 100%;
+                max-width: 120px;
+            }
 
             img {
                 width: 100%;
             }
         }
+        a {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            z-index: 1;
+        }
 
         .text {
-            color: #09546d;
-            font-size: 20px;
-            line-height: 27px;
             font-family: $ICIELDOMAINEDISPLAYMEDIUM;
+            color: #09546d;
+            font-size: 1.042vw;
+            line-height: 1.406vw;
 
+            @media (max-width: 767px) {
+                @include mb_fs14;
+                line-height: 1.2;
+            }
         }
     }
 }
 
 .block9 {
-    padding: 50px 100px 110px 100px;
+    padding: 2.604vw 5.208vw 9.635vw 5.208vw;
     background-image: url("../assets/images/block9_bg.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: top center;
     color: #fff;
 
-    &__title {
-        max-width: 275px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 50px;
+    @media (max-width: 767px) {
+        padding: 50px 5vw;
     }
 
-    &__slider {}
+    &__title {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2.604vw;
+        width: 14.323vw;
+        @media (max-width: 767px) {
+            width: 100%;
+            max-width: 280px;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__slider {
+    }
 
     &__item {
         .img {
-            margin-bottom: 40px;
-            max-height: 300px;
             overflow: hidden;
-
+            margin-bottom: 2.083vw;
+            max-height: 15.625vw;
+            @media (max-width: 767px) {
+                margin-bottom: 15px;
+            }
+            @media (max-width: 600px) {
+                max-height: 100%;
+            }
             img {
                 @include transition(all 0.3s ease);
             }
@@ -913,9 +1129,12 @@ $color1: #e3a371;
         }
 
         .text {
-            font-size: 29px;
-            line-height: 37px;
-
+            font-size: 1.51vw;
+            line-height: 1.927vw;
+            @media (max-width: 767px) {
+                @include mb_fs14;
+                line-height: 1.2;
+            }
             &:hover {
                 text-decoration: underline;
                 cursor: pointer;
@@ -925,109 +1144,182 @@ $color1: #e3a371;
 
     /* the slides */
     .slick-slide {
-        margin: 0 25px;
+        margin: 0 1.302vw;
     }
 
     /* the parent */
     .slick-list {
-        margin: 0 -25px;
+        margin: 0 -1.302vw;
+    }
+
+    .slick-dots {
+        bottom: -2.344vw;
+        li {
+            width: auto;
+            height: auto;
+        }
+        @media (max-width: 767px) {
+            position: relative;
+            bottom: 0;
+            margin-top: 30px;
+        }
+        button {
+            padding: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #6a747f;
+            &::before {
+                display: none;
+            }
+        }
+        .slick-active {
+            button {
+                background-color: #d4b896;
+            }
+        }
     }
 }
 
 .block10 {
     position: relative;
-    height: 730px;
     background-image: url("../assets/images/block10_bg.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: top center;
+    height: 38.8vw;
 
-    @media(max-width: 767px) {
+    @media (max-width: 767px) {
         @include flexbox;
         @include flex-direction(column);
+        background-image: none;
+        height: auto;
     }
 
     &__wrapper {
-        margin-left: 280px;
+        margin-left: 14.583vw;
     }
 
     &__logo {
         @include flexbox;
-        margin-bottom: 25px;
+        margin-bottom: 1.302vw;
     }
 
     &__info {
-        max-width: 845px;
+        width: 44.01vw;
         position: absolute;
-        top: 95px;
-        right: 100px;
+        top: 4.948vw;
+        right: 5.208vw;
 
-        @media(max-width: 767px) {
+        @media (max-width: 767px) {
+            background-image: url("../assets/images/block10_bg.jpg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: top center;
+            width: 100%;
             position: static;
             top: 0;
             right: 0;
+            padding: 50px 5vw;
         }
     }
 
     &__media {
         margin: 0;
         padding: 0;
-
+        @media (max-width: 767px) {
+            margin-top: 10px;
+        }
         .media {
             @include flexbox;
             @include align-items(center);
-            margin-bottom: 15px;
+            margin-bottom: 0.781vw;
+            @media (max-width: 767px) {
+                margin-top: 7px;
+            }
         }
 
         .img {
-            max-width: 35px;
-            margin-right: 12px;
+            max-width: 1.823vw;
+            margin-right: 0.625vw;
+            @media (max-width: 767px) {
+                max-width: 20px;
+                margin-right: 10px;
+            }
         }
 
         .value {
             color: #fff;
-            font-size: 24px;
             font-family: $ICIELDOMAINEDISPLAYBOLD;
+            font-size: 1.25vw;
+            @media (max-width: 767px) {
+                @include mb_fs14;
+                line-height: 1.2;
+            }
         }
     }
 
     .logo_khangdien,
     .logo_white {
-        max-width: 430px;
+        width: 22.396vw;
+        @media (max-width: 767px) {
+            width: 100%;
+            max-width: 35%;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 
     .logo_white {
-        margin-left: 80px;
+        margin-left: 4.167vw;
+    }
+    .logo_khangdien {
+        @media (max-width: 767px) {
+            max-width: 45%;
+        }
     }
 
     .form {
         background-color: #00465f99;
-        padding: 90px 45px 40px 45px;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
         position: absolute;
         bottom: 0;
-        left: 280px;
-        width: 645px;
+        left: 14.583vw;
+        width: 33.594vw;
+        padding: 4.688vw 2.344vw 2.083vw 2.344vw;
+        border-top-left-radius: 1.042vw;
+        border-top-right-radius: 1.042vw;
 
-        @media(max-width: 767px) {
-            position: static;
+        @media (max-width: 767px) {
+            position: relative;
             left: 0;
-            width: 80%;
-            order: 2;
+            width: 100%;
+            padding: 0;
+            overflow: hidden;
+            border-radius: 0;
+            padding: 50px 5vw;
+            background: linear-gradient(180deg, #08465ba3 0%, #0a4660 100%);
         }
     }
 
     .form__title {
         width: 90%;
-        margin-bottom: 30px;
+        margin-bottom: 1.563vw;
         margin-left: auto;
         margin-right: auto;
+
+        @media (max-width: 767px) {
+            margin-bottom: 20px;
+        }
     }
 
     .form__content {
-        margin-bottom: 25px;
+        margin-bottom: 1.302vw;
     }
 
-    .form__submit {}
+    .form__submit {
+        @media (max-width: 767px) {
+            max-width: 90%;
+            margin: 0 auto;
+        }
+    }
 }

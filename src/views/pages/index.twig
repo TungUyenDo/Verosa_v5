@@ -56,33 +56,53 @@
     <figure class="block1__mb_img mb">
         <img src="../../assets/images/block1_mb_bg.jpg" alt="block1_mb_bg">
     </figure>
-    <figure class="block1__text">
+    <figure class="block1__text wow fadeInLeft" data-wow-delay="0.1s">
         <img src="../../assets/images/block1_text.png" alt="block1_text">
     </figure>
     <div class="form">
-        <figure class="form__title">
+        <figure class="form__title wow fadeIn">
             <img src="../../assets/images/form_title.png" alt="form_title">
         </figure>
         <div class="form__content">
-            <div class="form-group">
-                <input type="text" name="block1Name" placeholder="Họ và tên" class="form-control ">
+            <div class="form-group wow fadeInUp" data-wow-delay="0.2s">
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Họ và tên"
+                    class="form-control block1Name"
+                >
             </div>
-            <div class="form-group">
-                <input type="text" name="block1Phone" placeholder="Số điện thoại" class="form-control">
+            <div class="form-group wow fadeInUp" data-wow-delay="0.4s">
+                <input
+                    type="text"
+                    name="phone"
+                    placeholder="Số điện thoại"
+                    class="form-control block1Phone"
+                >
             </div>
-            <div class="form-group">
-                <input type="text" name="block1Email" placeholder="Email" class="form-control">
+            <div class="form-group wow fadeInUp" data-wow-delay="0.6s">
+                <input
+                    type="text"
+                    name="email"
+                    placeholder="Email"
+                    class="form-control block1Email"
+                >
             </div>
-            <div class="form-group">
-                <input type="text" name="block1Note" placeholder="Lời nhắn" class="form-control">
+            <div class="form-group wow fadeInUp" data-wow-delay="0.8s">
+                <input
+                    type="text"
+                    name="note"
+                    placeholder="Lời nhắn"
+                    class="form-control block1Note"
+                >
             </div>
         </div>
-        <div class="form__des">
+        <div class="form__des wow fadeInUp" data-wow-delay="1s">
             <p>Dự án đã hoàn thiện, đang bàn giao</p>
             <p>Pháp lý minh bạch, sổ đổ từng lô</p>
             <p>Nhiều CSBH hấp dẫn</p>
         </div>
-        <div class="text-center">
+        <div class="text-center wow fadeInUp" data-wow-delay="1.1s">
             <button class="form__submit button" type="submit" disabled>
                 <img src="../../assets/images/button.png" alt="form__submit">
             </button>
@@ -91,15 +111,21 @@
 </section>
 {# tongquan #}
 <section class="block block2 tongquan" id="tongquan">
-    <figure class="block2__play">
+    <a
+        data-fancybox
+        class="block2__play wow fadeIn"
+        data-width="640"
+        data-height="360"
+        href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"
+    >
         <img src="../../assets/images/video_play.png" alt="video_play">
-    </figure>
-
+    </a>
     <div class="block2__content">
-        <figure class="block2__title">
+        <figure class="block2__title wow fadeInDown">
             <img src="../../assets/images/block2_title.png" alt="block2_title">
         </figure>
-        s <div class="block2__des">
+        s
+        <div class="block2__des wow fadeInDown" data-wow-delay="0.2s">
             Như câu nói “Nhà là nơi trái tim ta cư ngụ…” mà nhiều người gói ghém khát khao về ngôi nhà hạnh phúc, Khang
             Điền
             đã mang khát vọng về một không gian sống biệt lập mang âm hưởng Châu Âu hoài cổ chuyển tải trọn vẹn qua
@@ -107,7 +133,7 @@
             Park - Quần thể Nhà liên kế và biệt thự 5 sao, một không gian sống thượng lưu dành cho những khách hàng trân
             trọng giá trị tinh hoa.
         </div>
-        <div class="block2__items">
+        <div class="block2__items wow fadeInDown" data-wow-delay="0.3s">
             <div class="item">
                 <figure class="img">
                     <img src="../../assets/images/block2_icon1.png" alt="block2_icon1">
@@ -143,11 +169,10 @@
                 </div>
             </div>
         </div>
-        <figure class="block2__button button">
+        <figure class="block2__button button wow fadeInDown" data-wow-delay="0.4s">
             <img src="../../assets/images/button1.png" alt="button1">
         </figure>
     </div>
-
     <figure class="block2__title mb">
         <img src="../../assets/images/block2_mb_img.png" alt="block2_mb_img">
     </figure>
@@ -155,35 +180,51 @@
 {# block3 #}
 <section class="block block3">
     <div class="block3__wrapper">
-        <div class="block3__slider">
-            <figure class="img">
-                <img src="../../assets/images/block3_mb_1.jpg" alt="block3_mb_1">
-            </figure>
-            <figure class="img">
-                <img src="../../assets/images/block3_mb_2.jpg" alt="block3_mb_2">
-            </figure>
-            <figure class="img">
-                <img src="../../assets/images/block3_mb_3.jpg" alt="block6_img">
-            </figure>
+        <figure class="block3__title mb mb-4 wow fadeInDown" data-wow-delay="0.2s">
+            <img src="../../assets/images/block3_title.png" alt="block3_title">
+        </figure>
+        <div class="block3__slider swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" data-swiper="0">
+                    <figure class="img">
+                        <img src="../../assets/images/block3_mb_1.jpg" alt="block3_mb_1">
+                    </figure>
+                </div>
+                <div class="swiper-slide" data-swiper="1">
+                    <figure class="img">
+                        <img src="../../assets/images/block3_mb_2.jpg" alt="block3_mb_2">
+                    </figure>
+                </div>
+                <div class="swiper-slide" data-swiper="2">
+                    <figure class="img">
+                        <img src="../../assets/images/block3_mb_3.jpg" alt="block6_img">
+                    </figure>
+                </div>
+            </div>
         </div>
         <div class="block3__text">
-            <figure class="block3__title">
+            <figure class="block3__title pc wow fadeInUp" data-wow-delay="0.2s">
                 <img src="../../assets/images/block3_title.png" alt="block3_title">
             </figure>
-            <ul class="block3__list">
-                <li data-index="0" class="block3__list-text active">- Best Housing Landscape Architectural Design - Asia
+            <ul class="block3__list wow fadeInUp" data-wow-delay="0.4s">
+                <li data-index="0" class="block3__list-text active">
+                    - Best Housing Landscape Architectural Design - Asia
                     Property
-                    Awards 2019</li>
-                <li data-index="1" class="block3__list-text"> Best Housing Landscape Architectural Design - Vietnam
+                    Awards 2019
+                </li>
+                <li data-index="1" class="block3__list-text">
+                    Best Housing Landscape Architectural Design - Vietnam
                     Property
-                    Awards 2019</li>
-                <li data-index="2" class="block3__list-text">- Highly Commended Best Housing Development (HCMC) -
+                    Awards 2019
+                </li>
+                <li data-index="2" class="block3__list-text">
+                    - Highly Commended Best Housing Development (HCMC) -
                     Vietnam
-                    Property Awards 2019</li>
+                    Property Awards 2019
+                </li>
             </ul>
         </div>
     </div>
-
 </section>
 {# vitri #}
 <section class="block block4 vitri" id="vitri">
@@ -191,10 +232,10 @@
         <img src="../../assets/images/block4_map.jpg" alt="block4_map">
     </figure>
     <div class="block4__content">
-        <figure class="block4__title">
+        <figure class="block4__title wow fadeInUp" data-wow-delay="0.1s">
             <img src="../../assets/images/block4_title.png" alt="block4_title">
         </figure>
-        <div class="block4__des">
+        <div class="block4__des wow fadeInRight" data-wow-delay="0.3s">
             <p>
                 Gần vòng xoay Liên Phường – Võ Chí Công, phường Phú Hữu, Quận 9 (kế cận Quận 2), trong quần thể các khu
                 dân cư hiện hữu do Khang Điền phát triển trước đó: khu biệt thự Lucasta, khu nhà liên kế Mega, Merita,
@@ -212,10 +253,10 @@
 {# block5 #}
 <section class="block block5">
     <div class="block5__heading">
-        <figure class="block5__title">
+        <figure class="block5__title wow fadeInUp" data-wow-delay="0.1s">
             <img src="../../assets/images/block5_title.png" alt="block4_map">
         </figure>
-        <div class="block5__des">
+        <div class="block5__des wow fadeInUp" data-wow-delay="0.1s">
             Verosa Park dần hoàn thiện, đẹp hơn, xanh hơn mỗi ngày. Từ tháng 5.2020, Verosa Park bắt đầu bàn giao và
             chuẩn
             bị chào đón những cư dân đầu tiên dọn về
@@ -241,10 +282,10 @@
     <div class="block6__wrapper">
         <div class="block6__content">
             <div class="block6__left">
-                <figure class="block6__title">
+                <figure class="block6__title wow fadeInLeft" data-wow-delay="0.1s">
                     <img src="../../assets/images/block6_title.png" alt="block6_title">
                 </figure>
-                <div class="block6__des">
+                <div class="block6__des wow fadeInLeft" data-wow-delay="0.3s">
                     Verosa Park sở hữu 2 công viên và khu TDTT rộng khoảng 10.000m2 với điểm nhấn là hồ cảnh quan
                     Oceania
                     mát lành. Sau một ngày làm việc, cư dân Verosa Park sẽ tìm thấy những phút giây bình yên, tự tại,
@@ -253,7 +294,7 @@
                     tích
                     cực cho bản thân tại khu yoga ngoài trời, hồ bơi, đồi thiền…
                 </div>
-                <ul class="block6__list">
+                <ul class="block6__list wow fadeInLeft" data-wow-delay="0.5s">
                     <li data-index="0" class="block6__list-ulti active">Công viên Symphony Park</li>
                     <li data-index="1" class="block6__list-ulti">Hồ cảnh quan Oceania</li>
                     <li data-index="2" class="block6__list-ulti">Club house</li>
@@ -297,30 +338,40 @@
         <img src="../../assets/images/block7_bg.png" alt="block7_bg">
     </figure>
     <div class="block7__wrapper">
-        <div class="block7__left">
-            <figure class="block7__left-text block7__left-text-1">
-                <img src="../../assets/images/block7_text1.png" alt="block7_text1">
+        <div class="block7__left pc">
+            <figure class="block7__left-text block7__left-text-1 wow fadeIn" data-wow-delay="0.1s">
+                <img src="../../assets/images/block7_text1.png" alt="nhan ngay xe xin len den 1.5 ty">
             </figure>
-            <figure class="block7__left-text block7__left-text-2">
-                <img src="../../assets/images/block7_text2.png" alt="block7_text2">
+            <figure class="block7__left-text block7__left-text-2 wow fadeIn" data-wow-delay="0.2s">
+                <img src="../../assets/images/block7_text2.png" alt="chiet khau khi thanh toan nhanh">
             </figure>
         </div>
         <div class="block7__right">
             <div class="block7__title">
-                <figure class="block7__title-top">
-                    <img src="../../assets/images/block7_title.png" alt="block7_title">
+                <figure class="block7__title-top wow fadeIn" data-wow-delay="0.1s">
+                    <img src="../../assets/images/block7_title.png" alt="chinh sach ban hang">
                 </figure>
-                <figure class="block7__title-sub">
-                    <img src="../../assets/images/block7_subtitle.png" alt="block7_subtitle">
+                <figure class="block7__title-sub wow fadeInUp" data-wow-delay="0.3s">
+                    <img src="../../assets/images/block7_subtitle.png" alt="uu dai mo nhung can cuoi cung">
                 </figure>
-                <div class="block7__des">
+                <div class="block7__des wow fadeInUp" data-wow-delay="0.3s">
                     Số lượng cực kỳ giới hạn, Verosa Park đang chào đón những chủ nhân xứng tầm với những chương trình
                     ưu đãi hấp dẫn được cập nhật mới nhất từ chủ đầu tư Khang Điền.
                     <br>
                     * Chi tiết theo CSBH của CĐT
                 </div>
+                <div class="mb">
+                    <div class="block7__left">
+                        <figure class="block7__left-text block7__left-text-1 wow fadeIn" data-wow-delay="0.1s">
+                            <img src="../../assets/images/block7_text1.png" alt="nhan ngay xe xin len den 1.5 ty">
+                        </figure>
+                        <figure class="block7__left-text block7__left-text-2 wow fadeIn" data-wow-delay="0.2s">
+                            <img src="../../assets/images/block7_text2.png" alt="chiet khau khi thanh toan nhanh">
+                        </figure>
+                    </div>
+                </div>
             </div>
-            <figure class="block7__img">
+            <figure class="block7__img wow fadeIn" data-wow-delay="0.2s">
                 <img src="../../assets/images/block7_img.jpg" alt="block7_img">
             </figure>
         </div>
@@ -328,12 +379,13 @@
 </section>
 {# csbh #}
 <section class="block block8 csbh phaply" id="phaply">
-    <figure class="block8__title">
+    <figure class="block8__title wow fadeInUp" data-wow-delay="0.1s">
         <img src="../../assets/images/block8_title.png" alt="block8_title">
     </figure>
-    <div class="block8__wrapper">
+    <div class="block8__wrapper wow fadeIn" data-wow-delay="0.3s">
         <div class="block8__item">
             <figure class="img">
+                <a href="#"></a>
                 <img src="../../assets/images/icon_phaply.png" alt="icon_phaply">
             </figure>
             <div class="text">
@@ -343,6 +395,7 @@
         </div>
         <div class="block8__item">
             <figure class="img">
+                <a href="#"></a>
                 <img src="../../assets/images/icon_phaply.png" alt="icon_phaply">
             </figure>
             <div class="text">
@@ -352,6 +405,7 @@
         </div>
         <div class="block8__item">
             <figure class="img">
+                <a href="#"></a>
                 <img src="../../assets/images/icon_phaply.png" alt="icon_phaply">
             </figure>
             <div class="text">
@@ -361,6 +415,7 @@
         </div>
         <div class="block8__item">
             <figure class="img">
+                <a href="#"></a>
                 <img src="../../assets/images/icon_phaply.png" alt="icon_phaply">
             </figure>
             <div class="text">
@@ -369,6 +424,7 @@
         </div>
         <div class="block8__item">
             <figure class="img">
+                <a href="#"></a>
                 <img src="../../assets/images/icon_phaply.png" alt="icon_phaply">
             </figure>
             <div class="text">
@@ -378,6 +434,7 @@
         </div>
         <div class="block8__item">
             <figure class="img">
+                <a href="#"></a>
                 <img src="../../assets/images/icon_phaply.png" alt="icon_phaply">
             </figure>
             <div class="text">
@@ -438,16 +495,36 @@
         </figure>
         <div class="form__content">
             <div class="form-group">
-                <input type="text" name="block10Name" placeholder="Họ và tên" class="form-control">
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Họ và tên"
+                    class="form-control block10Name"
+                >
             </div>
             <div class="form-group">
-                <input type="text" name="block10Phone" placeholder="Số điện thoại" class="form-control">
+                <input
+                    type="text"
+                    name="phone"
+                    placeholder="Số điện thoại"
+                    class="form-control block10Phone"
+                >
             </div>
             <div class="form-group">
-                <input type="text" name="block10Email" placeholder="Email" class="form-control">
+                <input
+                    type="text"
+                    name="email"
+                    placeholder="Email"
+                    class="form-control block10Email"
+                >
             </div>
             <div class="form-group">
-                <input type="text" name="block10Note" placeholder="Lời nhắn" class="form-control">
+                <input
+                    type="text"
+                    name="note"
+                    placeholder="Lời nhắn"
+                    class="form-control block10Note"
+                >
             </div>
         </div>
         <div class="form__des">
