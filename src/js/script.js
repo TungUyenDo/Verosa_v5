@@ -47,12 +47,16 @@ var MainScript = (function () {
 
         });
 
-        $(".block3__list li").on('click', function () {
-            $(".block3__list li").removeClass("active");
-            $(this).addClass("active");
-            var numberSlider = $(this).attr("data-index");
-            swiper.slideTo(numberSlider, false, false);
-        });
+        // $(".block3__list li").on('click', function () {
+        //     $(".block3__list li").removeClass("active");
+        //     $(this).addClass("active");
+        //     var numberSlider = $(this).attr("data-index");
+        //     if (numberSlider === 0) {
+        //         swiper.slideTo(numberSlider, false, false);
+        //     } else {
+        //         swiper.slideTo(numberSlider, false, false);
+        //     }
+        // });
 
     }
 
@@ -222,8 +226,22 @@ var MainScript = (function () {
     }
 
     function goToByScroll(echo) {
+
+        let space = 70
+        switch (echo) {
+            case 'tongquan':
+            case 'vitri':
+            case 'tienich':
+                space = 20
+                break;
+
+            default:
+                space = -100
+                break;
+        }
+
         $('html,body').animate({
-            scrollTop: $("#" + echo).offset().top - 120,
+            scrollTop: $("#" + echo).offset().top + space,
         }, 'slow');
     }
 
@@ -348,14 +366,13 @@ var sections = $('section')
 
 $(window).on('scroll', function () {
     activeItemMenu();
-    $('.menu').css('height:110px')
 });
 
 function activeItemMenu() {
     var cur_pos = $(this).scrollTop();
 
     sections.each(function () {
-        var top = $(this).offset().top - 50,
+        var top = $(this).offset().top - 40,
             bottom = top + $(this).outerHeight();
 
         if (cur_pos >= top && cur_pos <= bottom) {
