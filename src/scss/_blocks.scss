@@ -1111,6 +1111,7 @@ $color1: #e3a371;
             overflow: hidden;
             margin-bottom: 2.083vw;
             max-height: 15.625vw;
+            cursor: pointer;
             @media (max-width: 767px) {
                 margin-bottom: 15px;
             }
@@ -1321,5 +1322,47 @@ $color1: #e3a371;
             max-width: 90%;
             margin: 0 auto;
         }
+    }
+}
+
+.news {
+    .modal-dialog {
+        max-width: 1140px;
+        margin-top: 6vh;
+        @media (max-width: 1140px) {
+            max-width: 90%;
+        }
+    }
+    .modal-content {
+        background-color: #0a3344;
+        border: 1px solid #0a3344;
+        border-radius: 30px;
+        color: #fff;
+        padding-bottom: 60px;
+    }
+    .modal-body {
+        max-height: 80vh;
+        padding: 55px 50px;
+        padding-bottom: 0;
+    }
+    .close {
+        max-width: 75px;
+        opacity: 1 !important;
+        float: none;
+        position: absolute;
+        right: -35px;
+        top: -30px;
+    }
+    &__title {
+        font-family: $UTMTRAJANPROBOLD;
+        font-size: 32px;
+        line-height: 1.2;
+        color: #e2c3ad;
+        margin-bottom: 25px;
+    }
+    &__content {
+        max-height: 65vh;
+        overflow-y: auto;
+        font-size: 18px;
     }
 }
