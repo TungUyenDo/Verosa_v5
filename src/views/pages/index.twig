@@ -1,4 +1,4 @@
-{% set page_title = 'Sun Shine' %}
+{% set page_title = 'VerosaV6' %}
 {% extends "../elements/_base.twig" %}
 {% block content %}
 {# nhớ thêm active để show #}
@@ -41,12 +41,20 @@
             <a class="menu__nav-link" link="lienhe" href="#lienhe">liên hệ</a>
         </li>
     </ul>
+    <div class="hambuger">
+        <span class="bar bar1"></span>
+        <span class="bar bar2"></span>
+        <span class="bar bar3"></span>
+    </div>
 </div>
 </div>
 {# trangchu #}
-<section class="s block1 trangchu" id="trangchu">
-    <figure class="block1__bg">
+<section class="block1 trangchu" id="trangchu">
+    <figure class="block1__bg pc">
         <img src="../../assets/images/block1_bg.jpg" alt="block1_bg">
+    </figure>
+    <figure class="block1__mb_img mb">
+        <img src="../../assets/images/block1_mb_bg.jpg" alt="block1_mb_bg">
     </figure>
     <figure class="block1__text">
         <img src="../../assets/images/block1_text.png" alt="block1_text">
@@ -57,16 +65,16 @@
         </figure>
         <div class="form__content">
             <div class="form-group">
-                <input type="text" placeholder="Họ và tên" class="form-control">
+                <input type="text" name="block1Name" placeholder="Họ và tên" class="form-control ">
             </div>
             <div class="form-group">
-                <input type="text" placeholder="Số điện thoại" class="form-control">
+                <input type="text" name="block1Phone" placeholder="Số điện thoại" class="form-control">
             </div>
             <div class="form-group">
-                <input type="text" placeholder="Email" class="form-control">
+                <input type="text" name="block1Email" placeholder="Email" class="form-control">
             </div>
             <div class="form-group">
-                <input type="text" placeholder="Lời nhắn" class="form-control">
+                <input type="text" name="block1Note" placeholder="Lời nhắn" class="form-control">
             </div>
         </div>
         <div class="form__des">
@@ -75,7 +83,7 @@
             <p>Nhiều CSBH hấp dẫn</p>
         </div>
         <div class="text-center">
-            <button disabled="disabled" class="form__submit button">
+            <button class="form__submit button" type="submit" disabled>
                 <img src="../../assets/images/button.png" alt="form__submit">
             </button>
         </div>
@@ -86,11 +94,12 @@
     <figure class="block2__play">
         <img src="../../assets/images/video_play.png" alt="video_play">
     </figure>
+
     <div class="block2__content">
         <figure class="block2__title">
             <img src="../../assets/images/block2_title.png" alt="block2_title">
         </figure>
-        <div class="block2__des">
+        s <div class="block2__des">
             Như câu nói “Nhà là nơi trái tim ta cư ngụ…” mà nhiều người gói ghém khát khao về ngôi nhà hạnh phúc, Khang
             Điền
             đã mang khát vọng về một không gian sống biệt lập mang âm hưởng Châu Âu hoài cổ chuyển tải trọn vẹn qua
@@ -138,38 +147,43 @@
             <img src="../../assets/images/button1.png" alt="button1">
         </figure>
     </div>
+
+    <figure class="block2__title mb">
+        <img src="../../assets/images/block2_mb_img.png" alt="block2_mb_img">
+    </figure>
 </section>
 {# block3 #}
 <section class="block block3">
-    <ul class="block3__list">
-        <li data-index="0" class="block6__list-ulti">Công viên Symphony Park</li>
-        <li data-index="1" class="block6__list-ulti">Hồ cảnh quan Oceania</li>
-        <li data-index="2" class="block6__list-ulti">Club house</li>
-        <li data-index="3" class="block6__list-ulti">Hồ bơi tràn</li>
-        <li data-index="4" class="block6__list-ulti">Sân chơi trẻ em đạt chuẩn</li>
-        <li data-index="5" class="block6__list-ulti">Phòng gym hiện đại</li>
-        <li data-index="6" class="block6__list-ulti">Sân thể thao đa năng</li>
-    </ul>
-    <div class="block3__slider">
-        <figure class="img">
-            <img src="../../assets/images/block6_img.jpg" alt="block6_img">
-        </figure>
-        <figure class="img">
-            <img src="../../assets/images/block6_img.jpg" alt="block6_img">
-        </figure>
-        <figure class="img">
-            <img src="../../assets/images/block6_img.jpg" alt="block6_img">
-        </figure>
-        <figure class="img">
-            <img src="../../assets/images/block6_img.jpg" alt="block6_img">
-        </figure>
-        <figure class="img">
-            <img src="../../assets/images/block6_img.jpg" alt="block6_img">
-        </figure>
-        <figure class="img">
-            <img src="../../assets/images/block6_img.jpg" alt="block6_img">
-        </figure>
+    <div class="block3__wrapper">
+        <div class="block3__slider">
+            <figure class="img">
+                <img src="../../assets/images/block3_mb_1.jpg" alt="block3_mb_1">
+            </figure>
+            <figure class="img">
+                <img src="../../assets/images/block3_mb_2.jpg" alt="block3_mb_2">
+            </figure>
+            <figure class="img">
+                <img src="../../assets/images/block3_mb_3.jpg" alt="block6_img">
+            </figure>
+        </div>
+        <div class="block3__text">
+            <figure class="block3__title">
+                <img src="../../assets/images/block3_title.png" alt="block3_title">
+            </figure>
+            <ul class="block3__list">
+                <li data-index="0" class="block3__list-text active">- Best Housing Landscape Architectural Design - Asia
+                    Property
+                    Awards 2019</li>
+                <li data-index="1" class="block3__list-text"> Best Housing Landscape Architectural Design - Vietnam
+                    Property
+                    Awards 2019</li>
+                <li data-index="2" class="block3__list-text">- Highly Commended Best Housing Development (HCMC) -
+                    Vietnam
+                    Property Awards 2019</li>
+            </ul>
+        </div>
     </div>
+
 </section>
 {# vitri #}
 <section class="block block4 vitri" id="vitri">
@@ -231,13 +245,16 @@
                     <img src="../../assets/images/block6_title.png" alt="block6_title">
                 </figure>
                 <div class="block6__des">
-                    Verosa Park sở hữu 2 công viên và khu TDTT rộng khoảng 10.000m2 với điểm nhấn là hồ cảnh quan Oceania
-                mát lành. Sau một ngày làm việc, cư dân Verosa Park sẽ tìm thấy những phút giây bình yên, tự tại, tận
-                hưởng không khí ấm áp, quây quần cùng gia đình ở khu BBQ, club house hay tiếp thêm nguồn năng lượng tích
-                cực cho bản thân tại khu yoga ngoài trời, hồ bơi, đồi thiền…
+                    Verosa Park sở hữu 2 công viên và khu TDTT rộng khoảng 10.000m2 với điểm nhấn là hồ cảnh quan
+                    Oceania
+                    mát lành. Sau một ngày làm việc, cư dân Verosa Park sẽ tìm thấy những phút giây bình yên, tự tại,
+                    tận
+                    hưởng không khí ấm áp, quây quần cùng gia đình ở khu BBQ, club house hay tiếp thêm nguồn năng lượng
+                    tích
+                    cực cho bản thân tại khu yoga ngoài trời, hồ bơi, đồi thiền…
                 </div>
                 <ul class="block6__list">
-                    <li data-index="0" class="block6__list-ulti">Công viên Symphony Park</li>
+                    <li data-index="0" class="block6__list-ulti active">Công viên Symphony Park</li>
                     <li data-index="1" class="block6__list-ulti">Hồ cảnh quan Oceania</li>
                     <li data-index="2" class="block6__list-ulti">Club house</li>
                     <li data-index="3" class="block6__list-ulti">Hồ bơi tràn</li>
@@ -248,6 +265,9 @@
             </div>
             <div class="block6__right">
                 <div class="block6__slider">
+                    <figure class="img">
+                        <img src="../../assets/images/block6_img.jpg" alt="block6_img">
+                    </figure>
                     <figure class="img">
                         <img src="../../assets/images/block6_img.jpg" alt="block6_img">
                     </figure>
@@ -294,7 +314,8 @@
                     <img src="../../assets/images/block7_subtitle.png" alt="block7_subtitle">
                 </figure>
                 <div class="block7__des">
-                    Số lượng cực kỳ giới hạn, Verosa Park đang chào đón những chủ nhân xứng tầm với những chương trình ưu đãi hấp dẫn được cập nhật mới nhất từ chủ đầu tư Khang Điền.
+                    Số lượng cực kỳ giới hạn, Verosa Park đang chào đón những chủ nhân xứng tầm với những chương trình
+                    ưu đãi hấp dẫn được cập nhật mới nhất từ chủ đầu tư Khang Điền.
                     <br>
                     * Chi tiết theo CSBH của CĐT
                 </div>
@@ -316,7 +337,8 @@
                 <img src="../../assets/images/icon_phaply.png" alt="icon_phaply">
             </figure>
             <div class="text">
-                Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài sản khác gắn liền với đất số CT75660 ngày 06.08.2018.
+                Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài sản khác gắn liền với đất số CT75660 ngày
+                06.08.2018.
             </div>
         </div>
         <div class="block8__item">
@@ -324,7 +346,8 @@
                 <img src="../../assets/images/icon_phaply.png" alt="icon_phaply">
             </figure>
             <div class="text">
-                Văn bản số 11687/SXD-PTN&TTBĐS ngày 18.09.2019 của Sở xây dựng Tp Hồ Chí Minh về việc đủ điều kiện được bán nhà ở hình thành trong tương lai Công ty Kim Phát.
+                Văn bản số 11687/SXD-PTN&TTBĐS ngày 18.09.2019 của Sở xây dựng Tp Hồ Chí Minh về việc đủ điều kiện được
+                bán nhà ở hình thành trong tương lai Công ty Kim Phát.
             </div>
         </div>
         <div class="block8__item">
@@ -332,7 +355,8 @@
                 <img src="../../assets/images/icon_phaply.png" alt="icon_phaply">
             </figure>
             <div class="text">
-                Văn bản số 11688/SXD-PTN&TTBĐS ngày 18.09.2019 của Sở xây dựng Tp Hồ Chí Minh về việc đủ điều kiện được bán nhà ở hình thành trong tương lai Công ty Thành Phúc.
+                Văn bản số 11688/SXD-PTN&TTBĐS ngày 18.09.2019 của Sở xây dựng Tp Hồ Chí Minh về việc đủ điều kiện được
+                bán nhà ở hình thành trong tương lai Công ty Thành Phúc.
             </div>
         </div>
         <div class="block8__item">
@@ -348,7 +372,8 @@
                 <img src="../../assets/images/icon_phaply.png" alt="icon_phaply">
             </figure>
             <div class="text">
-                Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài sản khác gắn liền với đất số CT59957 ngày 20.01.2017.
+                Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài sản khác gắn liền với đất số CT59957 ngày
+                20.01.2017.
             </div>
         </div>
         <div class="block8__item">
@@ -413,16 +438,16 @@
         </figure>
         <div class="form__content">
             <div class="form-group">
-                <input type="text" placeholder="Họ và tên" class="form-control">
+                <input type="text" name="block10Name" placeholder="Họ và tên" class="form-control">
             </div>
             <div class="form-group">
-                <input type="text" placeholder="Số điện thoại" class="form-control">
+                <input type="text" name="block10Phone" placeholder="Số điện thoại" class="form-control">
             </div>
             <div class="form-group">
-                <input type="text" placeholder="Email" class="form-control">
+                <input type="text" name="block10Email" placeholder="Email" class="form-control">
             </div>
             <div class="form-group">
-                <input type="text" placeholder="Lời nhắn" class="form-control">
+                <input type="text" name="block10Note" placeholder="Lời nhắn" class="form-control">
             </div>
         </div>
         <div class="form__des">
@@ -432,7 +457,7 @@
         </div>
         <div class="text-center">
             <button disabled="disabled" class="form__submit button">
-                <img src="../../assets/images/button.png" alt="form__submit">
+                <img src="../../assets/images/button_color_origin.png" alt="form__submit">
             </button>
         </div>
     </div>

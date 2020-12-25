@@ -1,12 +1,66 @@
-// $vanitas: "vanitas";
+$ICIELDOMAINEDISPLAYBOLD: "ICIELDOMAINEDISPLAYBOLD";
+$ICIELDOMAINEDISPLAYMEDIUM: "ICIELDOMAINEDISPLAYMEDIUM";
+$TrajanPro: "TrajanPro";
+$TrajanProBold: "TrajanProBold";
+$TrajanProRegular: "TrajanProRegular";
+$UTMTRAJANPROBOLD: "UTMTRAJANPROBOLD";
 
+@font-face {
+    font-family: 'ICIELDOMAINEDISPLAYBOLD';
+    src: url('../assets/fonts/ICIELDOMAINEDISPLAYBOLD/ICIELDOMAINEDISPLAYBOLD.eot');
+    src: url('../assets/fonts/ICIELDOMAINEDISPLAYBOLD/ICIELDOMAINEDISPLAYBOLD.eot') format('embedded-opentype'),
+        url('../assets/fonts/ICIELDOMAINEDISPLAYBOLD/ICIELDOMAINEDISPLAYBOLD.woff2') format('woff2'),
+        url('../assets/fonts/ICIELDOMAINEDISPLAYBOLD/ICIELDOMAINEDISPLAYBOLD.woff') format('woff'),
+        url('../assets/fonts/ICIELDOMAINEDISPLAYBOLD/ICIELDOMAINEDISPLAYBOLD.ttf') format('truetype'),
+        url('../assets/fonts/ICIELDOMAINEDISPLAYBOLD/ICIELDOMAINEDISPLAYBOLD.svg#ICIELDOMAINEDISPLAYBOLD') format('svg');
+}
 
-// @font-face {
-//     font-family: "vanitas";
-//     src: url("../assets/fonts/vanitas/vanitas.eot");
-//     src: url("../assets/fonts/vanitas/vanitas.eot") format("embedded-opentype"),
-//         url("../assets/fonts/vanitas/vanitas.woff2") format("woff2"),
-//         url("../assets/fonts/vanitas/vanitas.woff") format("woff"),
-//         url("../assets/fonts/vanitas/vanitas.ttf") format("truetype"),
-//         url("../assets/fonts/vanitas/vanitas.svg#UTMGod_sWordBold") format("svg");
-// }
+@font-face {
+    font-family: 'ICIELDOMAINEDISPLAYMEDIUM';
+    src: url('../assets/fonts/ICIELDOMAINEDISPLAYMEDIUM/ICIELDOMAINEDISPLAYMEDIUM.eot');
+    src: url('../assets/fonts/ICIELDOMAINEDISPLAYMEDIUM/ICIELDOMAINEDISPLAYMEDIUM.eot') format('embedded-opentype'),
+        url('../assets/fonts/ICIELDOMAINEDISPLAYMEDIUM/ICIELDOMAINEDISPLAYMEDIUM.woff2') format('woff2'),
+        url('../assets/fonts/ICIELDOMAINEDISPLAYMEDIUM/ICIELDOMAINEDISPLAYMEDIUM.woff') format('woff'),
+        url('../assets/fonts/ICIELDOMAINEDISPLAYMEDIUM/ICIELDOMAINEDISPLAYMEDIUM.ttf') format('truetype'),
+        url('../assets/fonts/ICIELDOMAINEDISPLAYMEDIUM/ICIELDOMAINEDISPLAYMEDIUM.svg#ICIELDOMAINEDISPLAYMEDIUM') format('svg');
+}
+
+@font-face {
+    font-family: 'UTMTRAJANPROBOLD';
+    src: url('../assets/fonts/UTMTRAJANPROBOLD/UTMTRAJANPROBOLD.eot');
+    src: url('../assets/fonts/UTMTRAJANPROBOLD/UTMTRAJANPROBOLD.eot') format('embedded-opentype'),
+        url('../assets/fonts/UTMTRAJANPROBOLD/UTMTRAJANPROBOLD.woff2') format('woff2'),
+        url('../assets/fonts/UTMTRAJANPROBOLD/UTMTRAJANPROBOLD.woff') format('woff'),
+        url('../assets/fonts/UTMTRAJANPROBOLD/UTMTRAJANPROBOLD.ttf') format('truetype'),
+        url('../assets/fonts/UTMTRAJANPROBOLD/UTMTRAJANPROBOLD.svg#UTMTRAJANPROBOLD') format('svg');
+}
+
+@font-face {
+    font-family: 'TrajanPro';
+    src: url('../assets/fonts/TrajanPro/TrajanPro.eot');
+    src: url('../assets/fonts/TrajanPro/TrajanPro.eot') format('embedded-opentype'),
+        url('../assets/fonts/TrajanPro/TrajanPro.woff2') format('woff2'),
+        url('../assets/fonts/TrajanPro/TrajanPro.woff') format('woff'),
+        url('../assets/fonts/TrajanPro/TrajanPro.ttf') format('truetype'),
+        url('../assets/fonts/TrajanPro/TrajanPro.svg#TrajanPro') format('svg');
+}
+
+@font-face {
+    font-family: 'c';
+    src: url('../assets/fonts/TrajanProBold/TrajanProBold.eot');
+    src: url('../assets/fonts/TrajanProBold/TrajanProBold.eot') format('embedded-opentype'),
+        url('../assets/fonts/TrajanProBold/TrajanProBold.woff2') format('woff2'),
+        url('../assets/fonts/TrajanProBold/TrajanProBold.woff') format('woff'),
+        url('../assets/fonts/TrajanProBold/TrajanProBold.ttf') format('truetype'),
+        url('../assets/fonts/TrajanProBold/TrajanProBold.svg#TrajanProBold') format('svg');
+}
+
+@font-face {
+    font-family: 'TrajanProRegular';
+    src: url('../assets/fonts/TrajanProRegular/TrajanProRegular.eot');
+    src: url('../assets/fonts/TrajanProRegular/TrajanProRegular.eot') format('embedded-opentype'),
+        url('../assets/fonts/TrajanProRegular/TrajanProRegular.woff2') format('woff2'),
+        url('../assets/fonts/TrajanProRegular/TrajanProRegular.woff') format('woff'),
+        url('../assets/fonts/TrajanProRegular/TrajanProRegular.ttf') format('truetype'),
+        url('../assets/fonts/TrajanProRegular/TrajanProRegular.svg#TrajanProRegular') format('svg');
+}

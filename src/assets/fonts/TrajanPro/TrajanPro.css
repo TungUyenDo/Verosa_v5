@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'TrajanPro';
+    src: url('fonts/TrajanPro.eot');
+    src: url('fonts/TrajanPro.eot') format('embedded-opentype'),
+         url('fonts/TrajanPro.woff2') format('woff2'),
+         url('fonts/TrajanPro.woff') format('woff'),
+         url('fonts/TrajanPro.ttf') format('truetype'),
+         url('fonts/TrajanPro.svg#TrajanPro') format('svg');
+}
