@@ -1,6 +1,14 @@
 {% set page_title = 'VerosaV6' %}
 {% extends "../elements/_base.twig" %}
 {% block content %}
+<div class="phone_fixed">
+    <a class="phone_fixed--icon" href="tel:0832968368">
+        <img src="./assets/images/Hotline.png" alt="block1_bg">
+    </a>
+</div>
+
+
+
 {# nhớ thêm active để show #}
 <div class="message">
     <div class="message__content text-center">
@@ -146,7 +154,7 @@
         </div>
         <figure class="block2__button button wow fadeInDown" data-toggle="modal" data-target="#popup"
             data-wow-delay="0.4s">
-            <img src="./assets/images/button1.png" alt="button1">
+            <img src="./assets/images/button1.png" alt="Đăng kí tham quan verosa park">
         </figure>
     </div>
     <figure class="block2__title mb">
@@ -594,17 +602,16 @@
                     </figure>
                     <div class="form__content">
                         <div class="form-group">
-                            <input type="text" name="name" placeholder="Họ và tên" class="form-control block1Name">
+                            <input type="text" name="name" placeholder="Họ và tên" class="form-control PopupName">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="phone" placeholder="Số điện thoại"
-                                class="form-control block1Phone">
+                            <input type="text" name="phone" placeholder="Số điện thoại" class="form-control PopupPhone">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="email" placeholder="Email" class="form-control block1Email">
+                            <input type="text" name="email" placeholder="Email" class="form-control PopupEmail">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="note" placeholder="Lời nhắn" class="form-control block1Note">
+                            <input type="text" name="note" placeholder="Lời nhắn" class="form-control PopupNote">
                         </div>
                     </div>
                     <div class="form__des">
