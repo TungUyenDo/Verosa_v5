@@ -214,9 +214,10 @@ var MainScript = (function () {
             e.preventDefault();
 
             let link = $(this).attr('link')
+            // console.log(link);
 
-            $('.menu__nav-item a').removeClass('active');
-            $('.menu__nav-item a[link="' + link + '"]').addClass('active');
+            $('.menu__nav-item .menu__nav-link').removeClass('active');
+            $('.menu__nav-item .menu__nav-link[link="' + link + '"]').addClass('active');
 
 
             if (link != '' && link != undefined) {
@@ -372,7 +373,21 @@ function activeItemMenu() {
     var cur_pos = $(this).scrollTop();
 
     sections.each(function () {
-        var top = $(this).offset().top - 40,
+        // console.log(sections);
+        let space = 70
+        switch (sections.id) {
+            case 'tongquan':
+            case 'vitri':
+            case 'tienich':
+                space = 20
+                break;
+
+            default:
+                space = 120
+                break;
+        }
+
+        var top = $(this).offset().top - space,
             bottom = top + $(this).outerHeight();
 
         if (cur_pos >= top && cur_pos <= bottom) {
